@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      name="demo3"
+      enctype="text/plain"
+      action="index.html"
+      novalidate
+      autocomplete="off"
+    >
+      <!-- datalist tag -->
+      <!-- 
+        Data list tag is used to create a list of option for input tag.
+        It is used to create a dropdown list.
+        It is used to create a autocomplete feature.
+        It is used to create a suggestion feature along with dropdown.
+        User can input any value in input tag.
+        list attribute of input tag is used to link datalist tag. So the value of id attribute of datalist tag should be equal to list value of input tag.
+        We can use option tag inside datalist tag to create a list of option.
+       -->
+      <input list="browsers" name="browser" autocomplete="off" />
+      <datalist id="browsers">
+        <option>IE TEST</option>
+        <option value="Firefox"></option>
+        <option value="Chrome"></option>
+        <option value="Opera"></option>
+        <option value="Safari"></option>
+      </datalist>
+
+      <!-- textarea tag -->
+      <!-- 
+        Textarea tag is used to create a multiline text box.
+        It is used to create a comment box.
+        It is used to create a message box.
+        Attribute of textarea tag:
+        cols: It is used to define the number of columns in textarea.
+        rows: It is used to define the number of rows in textarea.
+        placeholder: It is used to define a placeholder text in textarea.
+        readonly: It is used to make textarea readonly.
+        disabled: It is used to make textarea disabled.
+
+     -->
+      <br />
+      <label for="message">Input tag</label>
+      <input type="text" name="name" />
+      <br />
+      <label for="message">Textarea tag</label>
+      <textarea
+        name="message"
+        cols="10"
+        rows="5"
+        placeholder="Enter message here"
+      >
+hello world</textarea
+      >
+
+      <!-- Fieldset tag -->
+      <!-- 
+        Fieldset tag is used to group related element in a form.
+        We can use legend tag inside fieldset tag to create a heading for fieldset.
+      -->
+
+      <fieldset>
+        <legend>Personal Information</legend>
+        <input type="text" placeholder="Enter your first name" />
+        <input type="text" placeholder="Enter  last name" />
+        <input type="text" placeholder="Enter your email" />
+        <input type="text" placeholder="Enter your phone number" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Qualification Details</legend>
+        <input type="text" name="schoolname" placeholder="Enter school name" />
+        <input
+          type="text"
+          name="collegename"
+          placeholder="Enter college name"
+        />
+        <input
+          type="text"
+          name="schoolmarks"
+          placeholder="Enter school marks"
+        />
+        <input
+          type="text"
+          name="college makrs"
+          placeholder="Enter college marks"
+        />
+        <input type="text" placeholder="Highest degree" />
+      </fieldset>
+
+      <input type="submit" value="Submit" />
+
+      <!-- form tag -->
+      <!-- 
+        Form tag is used to submit the form data to action url
+        below are the Attribute of a form element
+        - Name: name attribute should be uniques throughout your applications.
+        - method: We can accept three methods those are as foloows: 
+            - get: This methods used to send the form data inside the URL provided in the action attribute. 
+            It has limitation over the character length, so if you want send data which is having large character lenght then always prefer using the post method. 
+            DO not use get method for the confendential data handling.
+
+            - post : It send data along with action url in the form of payload in the browser and it is visible inside the browsers developer tool -> network tab
+            There is no limitation on sending the data along with post method, and we can send the important data as well with post method.
+
+            - dialog : we use this method for dialog box
+
+        - action: we need to provide backend url/api on which we need to send the data
+
+        - enctype: 
+            - application/x-www-form-urlencoded : This is default for the form tag. This is basically for all the form elements except file type.
+            - multipart/form-data : This type we need to use when we are using input type as file in the form. So it will send the form data and file data separately along with form action.
+            -  text/plain  : We can use this type for debugging purpose.
+
+        - no-validation: we use attribute to disable the html validations on the form level.
+
+        - autocomplete: This will decide whether autocomplete is suported for all the form elements.
+
+        - Target : Target is used to send data for different purpose. 
+
+     Below are the value of target: 
+            - _blank : It will send data in new tab/window
+            - _self : It is send data in the same tab/iframe
+            - _parent : it is send data in the parent frame
+            - _top : It will send the data in top most frame.
+
+
+       -->
+    </form>
+  </body>
+</html>

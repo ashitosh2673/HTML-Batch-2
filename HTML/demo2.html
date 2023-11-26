@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function testforClick() {
+        alert("hello world");
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Form Element -->
+    <!-- Label tag
+      Label tag is used to define the label of input tag.
+        - for: It is used to define the id of input tag.
+    -->
+    <form method="get" action="index.html">
+      <label for="first-name">Enter your name</label>
+
+      <!-- input tag
+        input tag is used to define the input field.
+        Below are the attributes of input tag:
+        - type: It is used to define the type of input tag.
+          type of input tag:
+          - text: It is used to define the text field.
+          - password: It is used to define the password field.
+          - checkbox: It is used to define the checkbox field.
+          - radio: It is used to define the radio field.
+          - email: It is used to define the email field.
+          - number: It is used to define the number field.
+          - range: It is used to define the range field.
+          - date: It is used to define the date field.
+          - time: It is used to define the time field.
+          - datetime-local: It is used to define the datetime-local field.
+          - month: It is used to define the month field.
+          - week: It is used to define the week field.
+          - color: It is used to define the color field.
+          - tel: It is used to define the tel field.
+          - search: It is used to define the search field.
+          - file: It is used to define the file field.
+          - hidden: It is used to define the hidden field.
+          - image: It is used to define the image field.
+          - reset: It is used to define the reset field.
+          - submit: It is used to define the submit field.
+          - url: It is used to define the url field.
+          - button: It is used to define the button field.
+        - name: It is used to define the name of input tag.
+        - value: It is used to define the value of input tag.
+        - required: It is used to make the input tag required.
+
+       -->
+      <input
+        type="text"
+        id="first-name"
+        value="IT Shaala"
+        readonly
+        placeholder="Enter your name"
+        disabled
+      />
+
+      <!-- Password Input Tag
+        Password input tag is used to define the password field.
+        Below are the attributes of password input tag:
+        - type: It is used to define the type of input tag.
+        - name: It is used to define the name of input tag.
+        - value: It is used to define the value of input tag.
+        - checked: It is used to make the input tag checked.
+        - readonly: It is used to make the input tag readonly.
+        - disabled: It is used to make the input tag disabled.
+      -->
+      <input type="password" placeholder="Enter your password" /> <br />
+
+      <!-- Checkbox Input Tag
+        Checkbox input tag is used to define the checkbox. 
+
+        Below are the attributes of checkbox input tag:
+        - type: It is used to define the type of input tag.
+        - name: It is used to define the name of input tag.
+        - value: It is used to define the value of input tag.
+        - checked: It is used to make the input tag checked.
+        - readonly: It is used to make the input tag readonly.
+        - disabled: It is used to make the input tag disabled.
+      -->
+      <label>Choose Vehicle you own:</label>
+      <input type="checkbox" name="vehicle1" value="Bike" /> I have a bike<br />
+      <input type="checkbox" name="vehicle2" value="Car" /> I have a car<br />
+      <input type="checkbox" name="vehicle3" value="Boat" /> I have a boat<br />
+
+      <!-- Radio Inout Tag
+        Radio input tag is used to define the radio button.
+        name attribute is used to group the radio button. So every radio button should have same name.
+        Below are the attributes of radio input tag:
+        - type: It is used to define the type of input tag.
+        - name: It is used to define the name of input tag.
+        - value: It is used to define the value of input tag.
+        - checked: It is used to make the input tag checked.
+        - readonly: It is used to make the input tag readonly.
+        - disabled: It is used to make the input tag disabled.
+      -->
+      <label>Choose Gender:</label>
+      <input type="radio" name="gender" value="male" /> Male<br />
+      <input type="radio" name="gender" value="female" /> Female<br />
+
+      <!-- Email tag
+        Email input tag is used to define the email field.
+        Below are the attributes of email input tag:
+        - type: It is used to define the type of input tag.
+        - name: It is used to define the name of input tag.
+        - value: It is used to define the value of input tag.
+        - readonly: It is used to make the input tag readonly.
+        - disabled: It is used to make the input tag disabled.
+        - multiple: It is used to make the input tag multiple.
+      -->
+
+      <input type="email" placeholder="Enter your email" required multiple />
+      <br />
+
+      <!-- Number 
+        Number input tag is used to define the number field.
+        Below are the attributes of number input tag:
+        - type: It is used to define the type of input tag.
+        - name: It is used to define the name of input tag.
+        - value: It is used to define the value of input tag.
+        - readonly: It is used to make the input tag readonly.
+        - disabled: It is used to make the input tag disabled.
+        - min: It is used to define the minimum value of input tag.
+        - max: It is used to define the maximum value of input tag.
+        - step: It is used to define the step value of input tag.
+  
+      -->
+      <!-- <input
+        type="number"
+        placeholder="Enter your number"
+        required
+        min="0"
+        max="100"
+        step="10"
+        style="width: 100px"
+      /> -->
+      <br />
+
+      <!-- Range 
+        Range input tag is used to define the range field.
+        Below are the attributes of range input tag:
+        - type: It is used to define the type of input tag.
+        - name: It is used to define the name of input tag.
+        - value: It is used to define the value of input tag.
+        - readonly: It is used to make the input tag readonly.
+        - disabled: It is used to make the input tag disabled.
+        - min: It is used to define the minimum value of input tag.
+        - max: It is used to define the maximum value of input tag.
+        - step: It is used to define the step value of input tag.
+      -->
+      <!-- <input
+        type="range"
+        min="0"
+        max="100"
+        step="10"
+        value="20"
+        style="width: 100px"
+      /> -->
+      <br />
+
+      <!-- Date / time/ calender 
+        Date input tag is used to define the date field.
+        Below are the attributes of date input tag:
+        - type: It is used to define the type of input tag.
+        - name: It is used to define the name of input tag.
+        - value: It is used to define the value of input tag.
+        - readonly: It is used to make the input tag readonly.
+        - disabled: It is used to make the input tag disabled.
+        - min: It is used to define the minimum value of input tag.
+        - max: It is used to define the maximum value of input tag.
+        - step: It is used to define the step value of input tag.
+      -->
+      <label for="date">Date</label> <input id="date" type="date" />
+      <br />
+      <label for="date">time</label><input type="time" />
+      <br />
+      <label for="date">Date time local</label><br />
+      <input type="datetime-local" />
+      <br />
+      <label for="date">Month</label><input type="month" value="" />
+      <br />
+      <label for="date">Week</label><input type="week" />
+      <br />
+
+      <label>Select Color</label><input type="color" value="#ff0000" />
+
+      <!-- Tel 
+        Tel input tag is used to define the tel field.
+        Below are the attributes of tel input tag:
+        - type: It is used to define the type of input tag.
+        - name: It is used to define the name of input tag.
+        - value: It is used to define the value of input tag.
+        - readonly: It is used to make the input tag readonly.
+        - disabled: It is used to make the input tag disabled.
+        - pattern: It is used to define the pattern of input tag.
+      -->
+      <input
+        name="phone"
+        type="tel"
+        placeholder="+91-1234567890"
+        pattern="[+]{1}[0-9]{2}-[0-9]{10}"
+      />
+      <br />
+
+      <!-- Search 
+        Search input tag is used to define the search field.
+        Below are the attributes of search input tag:
+        - type: It is used to define the type of input tag.
+        - name: It is used to define the name of input tag.
+      -->
+      <input name="search" type="search" />
+
+      <!-- File 
+        File input tag is used to define the file field.
+        Below are the attributes of file input tag:
+        - type: It is used to define the type of input tag.
+        - name: It is used to define the name of input tag.
+        - multiple: It is used to make the input tag multiple.
+        - accept: It is used to define the accept of input tag.
+      -->
+      <input type="file" multiple />
+
+      <!-- Hidden 
+        Hidden input tag is used to define the hidden field.
+        Below are the attributes of hidden input tag:
+        - type: It is used to define the type of input tag.
+        - name: It is used to define the name of input tag.
+        - value: It is used to define the value of input tag.
+      -->
+      <input type="hidden" value="12345" />
+
+      <!-- Image 
+        Image input tag is used to define the image field. It is used to submit the form with image button
+        Below are the attributes of image input tag:
+        - type: It is used to define the type of input tag.
+        - src: It is used to define the source of input tag.
+        - width: It is used to define the width of input tag.
+        - height: It is used to define the height of input tag.
+      -->
+      <input
+        type="image"
+        src="./images/pexels-tanika-3687770.jpg"
+        width="100px"
+        height="50px"
+      />
+
+      <!-- Reset 
+        Reset input tag is used to define the reset field. It is used to reset the form.
+        Below are the attributes of reset input tag:
+        - type: It is used to define the type of input tag.
+        - value: It is used to define the value of input tag.
+      -->
+      <input type="reset" value="Reset" />
+
+      <!-- Submit 
+        Submit input tag is used to define the submit field. It is used to submit the form.
+        Below are the attributes of submit input tag:
+        - type: It is used to define the type of input tag.
+        - value: It is used to define the value of input tag.
+      -->
+      <input type="submit" value="Submit" />
+
+      <!-- Url 
+        Url input tag is used to define the url field.
+        Below are the attributes of url input tag:
+        - type: It is used to define the type of input tag.
+        - value: It is used to define the value of input tag.
+      -->
+      <input type="url" placeholder="Enter your url" />
+
+      <!-- Button 
+        Button input tag is used to define the button field. A push button that activates a JavaScript when it is clicked: 
+        Below are the attributes of button input tag:
+        - type: It is used to define the type of input tag.
+        - value: It is used to define the value of input tag.
+      -->
+      <input type="button" value="Click here" onclick="testforClick()" />
+
+      <!-- Select Tag 
+        Select tag is used to define the select field. It is used to create a drop down list.
+        Below are the attributes of select tag:
+        - name: It is used to define the name of input tag.
+        - id: It is used to define the id of input tag.
+        - size: It is used to define the size of input tag.
+        - multiple: It is used to make the input tag multiple.
+
+      -->
+      <select name="cars" id="cars" size="3" multiple>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes" selected>Mercedes</option>
+        <option value="audi">Audi</option>
+        <option value="audi1">Audi1</option>
+      </select>
+
+      <!-- Optiongroup -->
+      <!-- 
+        Optiongroup tag is used to define the optiongroup field. It is used to group the options.
+        Below are the attributes of optiongroup tag:
+        - label: It is used to define the label of input tag.
+        
+       -->
+      <select name="cars" id="cars" multiple>
+        <optgroup label="Swedish Cars">
+          <option value="volvo" disabled>Volvo</option>
+          <option value="saab">Saab</option>
+        </optgroup>
+        <optgroup label="German Cars">
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </optgroup>
+      </select>
+
+      <!-- atrrbites used in the forms elements :
+              - for: It is used to define the id of input tag.
+        - value: It is used to define the value of input tag.
+        - readonly: It is used to make the input tag readonly.
+        - placeholder: It is used to define the placeholder of input tag.
+        - disabled: It is used to make the input tag disabled.
+        - type: It is used to define the type of input tag.
+        - name: It is used to define the name of input tag.
+        - value: It is used to define the value of input tag.
+        - required: It is used to make the input tag required.
+        - min: It is used to define the minimum value of input tag.
+        - max: It is used to define the maximum value of input tag.
+        - step: It is used to define the step value of input tag.
+        - multiple: It is used to make the input tag multiple.
+        - size: It is used to define the size of input tag.
+        - checked: It is used to make the input tag checked.
+        - readonly: It is used to make the input tag readonly.
+        - disabled: It is used to make the input tag disabled.
+        - pattern: It is used to define the pattern of input tag.
+        - multiple: It is used to make the input tag multiple.
+        - accept: It is used to define the accept of input tag.
+        - autocomplete: It is used to define the autocomplete of input tag.
+        - autofocus: It is used to make the input tag autofocus.
+        - form: It is used to define the form of input tag.
+        - formaction: It is used to define the formaction of input tag.
+        - formenctype: It is used to define the formenctype of input tag.
+        - formmethod: It is used to define the formmethod of input tag.
+        - formnovalidate: It is used to define the formnovalidate of input tag.
+        - formtarget: It is used to define the formtarget of input tag.
+        - height: It is used to define the height of input tag.
+        - width: It is used to define the width of input tag.
+        - list: It is used to define the list of input tag.
+        - min: It is used to define the min of input tag.
+        - max: It is used to define the max
+
+      -->
+    </form>
+  </body>
+</html>

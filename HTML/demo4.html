@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Listing/List tag -->
+
+    <!-- Unordered List -->
+    <!-- 
+        Unordered list is used to create a list of items.
+        It is used to create a menu.
+        We can use ul tag to create a unordered list.
+        Below are the options of ul tag:
+        - By default it is disc
+        - Circle ( Hollow circle )
+        - Square
+        - None ( No bullet )
+        - Also you can convert unordered list into ordered list by using type attribute of ul tag.
+     -->
+    <ul style="list-style-type: decimal">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+
+    <!-- Ordered List -->
+
+    <!-- 
+        Ordered list is used to create a list of items with order
+        Below are the attributes of ol tag:
+        - type: It is used to define the type of list. By default it is 1.
+        - type is having different values those are as follows: 
+        1 : Numbers
+        A : Capital Alphabets
+        a: Small Alphabets
+        I: Capital Roman
+        i: Small Roman
+        - start: It is used to define the starting number of list. By default it is 1.
+        - reversed: It is used to reverse the order of list. By default it is false.
+     -->
+    <ol type="A">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ol>
+
+    <ol type="a">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ol>
+
+    <ol type="I">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ol>
+    <ol start="10" reversed>
+      <li>
+        <ol start="10" reversed>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ol>
+      </li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ol>
+
+    <!-- description list -->
+    <!-- 
+        Description list is used to create a list of items with description.
+        It is used to create a list of items with description.
+        We can use dl tag to create a description list.
+        We can use below tah inside the dl tag:
+        - dt: It is used to define the term of description list.
+        - dd: It is used to define the description of description list.
+     -->
+    <dl>
+      <dt>Item 1 for the test of description list</dt>
+      <dt>Item 2 for the test of description list</dt>
+      <dd>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ipsam
+        reiciendis voluptatum consequatur totam soluta praesentium distinctio.
+        Ipsam ipsum error quaerat dolorem est harum officiis vitae consequuntur
+        cum, atque architecto!
+      </dd>
+      <dd>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ipsam
+        reiciendis voluptatum consequatur totam soluta praesentium distinctio.
+        Ipsam ipsum error quaerat dolorem est harum officiis vitae consequuntur
+        cum, atque architecto!
+      </dd>
+      <dd>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ipsam
+        reiciendis voluptatum consequatur totam soluta praesentium distinctio.
+        Ipsam ipsum error quaerat dolorem est harum officiis vitae consequuntur
+        cum, atque architecto!
+      </dd>
+      <dt>Item 2</dt>
+      <dd>Item 2 description</dd>
+      <dt>Item 3</dt>
+      <dd>Item 3 description</dd>
+    </dl>
+
+    <!-- Nav -->
+    <!-- 
+        nav tag is used to create a navigation bar.
+        We can use nav tag in both heafer as well footer for handling the navigation links
+     -->
+    <nav style="background-color: brown; color: white">
+      <a style="text-decoration: none; color: white; padding: 8px" href="#"
+        >Home</a
+      >
+      |
+      <a style="text-decoration: none; color: white; padding: 8px" href="#"
+        >About</a
+      >
+      |
+      <a style="text-decoration: none; color: white; padding: 8px" href="#"
+        >Contact</a
+      >
+    </nav>
+
+    <ul
+      style="list-style-type: none; display: flex; background-color: lawngreen"
+    >
+      <li>
+        <a style="text-decoration: none; color: white; padding: 8px" href="#"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a style="text-decoration: none; color: white; padding: 8px" href="#"
+          >About</a
+        >
+      </li>
+      <li>
+        <a style="text-decoration: none; color: white; padding: 8px" href="#"
+          >Contact</a
+        >
+      </li>
+    </ul>
+
+    <!-- Table -->
+    <!-- 
+        Table tag is used to create a table and show data in a tabular format
+        Below are the tags ww can use inside the table tag:
+        - caption: It is used to define the caption/title of table.
+        - colgroup: It is used to define the group of columns and apply style on it.
+        - col: It is used to define the column of table.
+        - thead: It is used to define the header of table.
+        - tbody: It is used to define the body of table.
+        - tfoot: It is used to define the footer of table.
+        - tr: It is used to define the row of table.
+        - th: It is used to define the heading of table. We can add th inside thead and tbody as well to add the heading in table.  
+        - td: It is used to define the data of table. We can add td inside tbody and tfoot as well to add the data in table.
+        - rowspan: It is used to define the number of rows a cell should span.
+        - colspan: It is used to define the number of columns a cell should span.
+     -->
+    <table border="1">
+      <caption>
+        Table Caption
+      </caption>
+
+      <colgroup>
+        <col style="background-color: red" />
+        <col style="background-color: green" />
+        <col style="background-color: blue" />
+      </colgroup>
+      <tfoot>
+        <tr>
+          <td>Footer 1</td>
+          <td>Footer 2</td>
+          <td>Footer 3</td>
+        </tr>
+      </tfoot>
+
+      <tbody>
+        <tr>
+          <th rowspan="2">Row 1 Column 1</th>
+          <td colspan="2">Row 1 Column 2</td>
+        </tr>
+        <tr>
+          <!-- <td>Row 2 Column 1</td> -->
+          <td>Row 2 Column 2</td>
+          <td>Row 2 Column 3</td>
+        </tr>
+      </tbody>
+
+      <thead>
+        <tr>
+          <th>Heading 1</th>
+          <th>Heading 2</th>
+          <th>Heading 3</th>
+        </tr>
+      </thead>
+    </table>
+  </body>
+</html>
