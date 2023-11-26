@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo 6</title>
+  </head>
+  <body>
+    <!-- Progress tag -->
+    <!-- 
+        Progress tag is used to show the progress of a task.
+        Below are the attrvibutes of progress tag:
+        - value: It is used to define the current value of progress. By default it is 0.
+        - max: It is used to define the maximum value of progress. By default it is 1.
+     -->
+    <progress value="10"></progress>
+
+    <!-- meter tag -->
+    <!-- 
+        Meter tag is used to show the measurement within a known range.
+        Below are the attributes of meter tag:
+        - value: It is used to define the current value of meter. By default it is 0.
+        - min: It is used to define the minimum value of meter. By default it is 0.
+        - max: It is used to define the maximum value of meter. By default it is 1.
+        - low: It is used to define the low value of meter. By default it is 0.
+        - high: It is used to define the high value of meter. By default it is 1.
+        - optimum: It is used to define the optimum/avarage/best value of meter. By default it is 0.
+     -->
+
+    <meter
+      min="10"
+      value="25"
+      optimum="25"
+      low="26"
+      high="80"
+      max="100"
+    ></meter>
+
+    <!-- iframe Tag -->
+    <!-- 
+        iframe tag is used to embed another document within the current HTML document.
+        We can use iframe tag to embed videos, maps, etc.
+        Below are the attributes of iframe tag:
+        - src: It is used to define the source of iframe.
+        - width: It is used to define the width of iframe.
+        - height: It is used to define the height of iframe.
+     -->
+
+    <!-- <iframe
+      width="1227"
+      height="690"
+      src="https://www.youtube.com/embed/6Cb8eMxdMHo"
+      title="Yuvraj Singh - Cricket, Dhoni, Life &amp; Health | Darr Ke Aage Jeet Hai Stories On TRS हिंदी 212"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+
+    <iframe
+      width="500"
+      height="600"
+      src="https://itshaala.com/"
+      frameborder="0"
+    ></iframe> -->
+
+    <!-- Header Tag -->
+
+    <footer>
+      <h1>Footer</h1>
+    </footer>
+
+    <header>
+      <h1>Header Tag</h1>
+      <nav>
+        <a>Home</a>
+        <a>About</a>
+        <a>Contact</a>
+      </nav>
+    </header>
+
+    <!-- audio tag -->
+    <!-- 
+        Audio tag is used to add audio file to the HTML document.
+        Types of audio files:
+        - MP3
+        - WAV
+        - OGG
+        We can use multiple source tags inside audio tag to add audio file in different formats. So it will check for the first source tag and if it is not supported then it will check for the second source tag and so on.
+     -->
+
+    <audio controls loop muted autoplay>
+      <source src="./audio/sample-6s.mp3" type="audio/mp3" />
+      <source src="./audio/sample-6s.wav" type="audio/wav" />
+      <source src="./audio/sample-6s.ogg" type="audio/ogg" />
+    </audio>
+
+    <!-- Video tag -->
+    <!-- 
+        Video tag is used to add video file to the HTML document.
+        Types of video files:
+        - MP4
+        - WEBM
+        - OGG
+        We can use multiple source tags inside video tag to add video file in different formats. So it will check for the first source tag and if it is not supported then it will check for the second source tag and so on.
+     -->
+
+    <video
+      controls
+      loop
+      width="500"
+      height="500"
+      poster="./Image/cat/photo-1529778873920-4da4926a72c2.avif"
+      preload="metadata"
+    >
+      <source src="./video/file_example_MP4_640_3MG.mp4" type="video/mp4" />
+      <source src="./video/file_example_OGG_1280_11_4mg.ogg" type="video/ogg" />
+    </video>
+
+    <!-- picture tag -->
+    <picture >
+      <source
+        srcset="./Image/cat/photo-1529778873920-4da4926a72c2.avif"
+        type="image/avif"
+        media="(min-width: 820px)"
+      />
+      <source
+        srcset="./Image/dogs/pexels-tanika-3687770.jpg"
+        type="image/webp"
+        media="(min-width: 650px)"
+      />
+      <img
+        src="./Image/sunflower/pexels-anna-tarazevich-5076425.jpg"
+        alt="cat"
+        width="500"
+        height="500"
+      />
+  </body>
+</html>

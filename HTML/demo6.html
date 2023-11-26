@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function openDialog() {
+        document.getElementById("dialog").showModal();
+      }
+      function closeDialog() {
+        document.getElementById("dialog").close();
+      }
+    </script>
+  </head>
+  <body>
+    <!-- track tag -->
+    <!-- 
+        Track tag is used to add subtitles to the video.
+        Below are the attributes of track tag:
+        - src: It is used to define the source of subtitles.
+        - kind: It is used to define the type of subtitles.
+        - srclang: It is used to define the language of subtitles.
+        - label: It is used to define the label of subtitles.
+        - default: It is used to define the default subtitles.
+     -->
+    <video width="500" height="500px" controls>
+      <source src="./video/file_example_MP4_640_3MG.mp4" type="video/mp4" />
+      <source src="./video/file_example_OGG_1280_11_4mg.ogg" type="video/ogg" />
+      <track
+        src="./subtitles/sample.vtt"
+        kind="subtitles"
+        srclang="en"
+        label="English"
+        default
+      />
+
+      <track
+        src="./subtitles/sample.vtt"
+        kind="subtitles"
+        srclang="hi"
+        label="Hindi"
+      />
+    </video>
+
+    <!-- figure tag -->
+    <!-- 
+        Figure tag is used to add images with caption.
+        Below are the attributes of figure tag:
+        - src: It is used to define the source of image.
+        - alt: It is used to define the alternative text of image.
+        - width: It is used to define the width of image.
+        - height: It is used to define the height of image.
+        Figure caption tag is used to add caption to the image.
+     -->
+    <figure>
+      <img
+        src="./Image/cat/photo-1529778873920-4da4926a72c2.avif"
+        alt="Image"
+        width="500"
+        height="500"
+      />
+      <figcaption>This is Cat 0</figcaption>
+      <figcaption>This is Cat 1</figcaption>
+    </figure>
+
+    <!-- dialog tag -->
+    <!-- 
+        Dialog tag is used to add dialog box to the HTML document.
+        Below are the attributes of dialog tag:
+        - open: It is used to define whether the dialog box is open or not.
+     -->
+    <input type="button" value="Open Dialog" onclick="openDialog()" />
+    <dialog id="dialog" style="height: 500px; width: 500px">
+      <h1>Dialog Box</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+        voluptatum, quibusdam, quia, quos voluptates voluptatem quod
+        exercitationem quas voluptatibus quidem doloribus. Quisquam voluptatum,
+        quibusdam, quia, quos voluptates voluptatem quod exercitationem quas
+        voluptatibus quidem doloribus.
+      </p>
+      <button onclick="closeDialog()">Close</button>
+    </dialog>
+
+    <!-- details -->
+    <!-- 
+        Details tag is used to add FAQ to the HTML document.
+        Below are the attributes of details tag:
+        - open: It is used to define whether the FAQ is open or not.
+     -->
+    <details>
+      <summary>This is my first FAQ question1</summary>
+      <summary>This is my first FAQ question2</summary>
+      <p>
+        This is my Answer : Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Quisquam voluptatum, quibusdam, quia, quos voluptates voluptatem
+        quod exercitationem quas voluptatibus quidem doloribus. Quisquam
+        voluptatum, quibusdam, quia, quos voluptates voluptatem quod
+        exercitationem quas voluptatibus quidem doloribus.
+      </p>
+    </details>
+
+    <details open>
+      <summary>This is my first FAQ question2</summary>
+      <p>
+        This is my Answer : Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Quisquam voluptatum, quibusdam, quia, quos voluptates voluptatem
+        quod exercitationem quas voluptatibus quidem doloribus. Quisquam
+        voluptatum, quibusdam, quia, quos voluptates voluptatem quod
+        exercitationem quas voluptatibus quidem doloribus.
+      </p>
+    </details>
+
+    <!-- Article tag -->
+    <!-- 
+        Article tag is used to add article to the HTML document.
+        We can use article tag to add blog, news, forums etc.
+     -->
+    <div>
+      <h1>Article Tag with div</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio aperiam
+        corporis cum eius esse quis doloribus, eaque beatae voluptates, unde
+        temporibus, alias sint dicta! Facilis autem beatae ullam animi nemo?
+      </p>
+    </div>
+
+    <main style="display: flex">
+      <article style="width: 70%">
+        <h1>Article Tag with div</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio aperiam
+          corporis cum eius esse quis doloribus, eaque beatae voluptates, unde
+          temporibus, alias sint dicta! Facilis autem beatae ullam animi nemo?
+        </p>
+      </article>
+
+      <!-- Aside tag -->
+      <!-- 
+        Aside tag is used to add aside content to the HTML document.
+        We can use aside tag to add sidebars, ads, etc.
+     -->
+
+      <aside style="width: 25%">
+        <h1>Aside Tag</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio aperiam
+          corporis cum eius esse quis doloribus, eaque beatae voluptates, unde
+          temporibus, alias sint dicta! Facilis autem beatae ullam animi nemo?
+        </p>
+      </aside>
+    </main>
+
+    <!-- Main tag -->
+    <!-- 
+        Main tag is used to add main content to the HTML document.
+        We can use main tag to add main content of the HTML document.
+     -->
+
+    <!-- section tag -->
+    <!-- 
+            Section tag is used to add section to the HTML document.
+            We can use section tag to add sections of the HTML document.
+            -->
+    <section>
+      <h1>Section Tag</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio aperiam
+        corporis cum eius esse quis doloribus, eaque beatae voluptates, unde
+        temporibus, alias sint dicta! Facilis autem beatae ullam animi nemo?
+      </p>
+    </section>
+
+    <section>
+      <h1>Section Tag</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio aperiam
+        corporis cum eius esse quis doloribus, eaque beatae voluptates, unde
+        temporibus, alias sint dicta! Facilis autem beatae ullam animi nemo?
+      </p>
+    </section>
+
+    <!-- svg tag -->
+    <!-- 
+        SVG stands for Scalable Vector Graphics.
+        SVG is used to add vector graphics to the HTML document.
+        We can use SVG to add logos, icons, etc.
+     -->
+
+    <svg width="500" height="500">
+      <circle cx="250" cy="250" r="200" fill="red" />
+    </svg>
+
+    <svg>
+      <rect x="50" y="50" width="100" height="100" fill="red" />
+    </svg>
+
+    <svg>
+      <polygon points="200,10 250,190 160,210 150,10" fill="lime" />
+    </svg>
+
+    <svg>
+      <ellipse cx="300" cy="80" rx="100" ry="50" out="yellow" />
+    </svg>
+
+    <svg>
+      <line x1="0" y1="0" x2="200" y2="200" stroke="red" />
+    </svg>
+
+    <svg>
+      <polyline
+        points="20,20 40,25 60,40 80,120 120,140 200,180"
+        stroke="red"
+      />
+    </svg>
+  </body>
+</html>
