@@ -1,0 +1,35 @@
+.cont-1 {
+  position: static;
+  background-color: red;
+}
+
+.cont-2 {
+  position: sticky;
+  background-color: green;
+  top: 0;
+}
+
+.cont-3 {
+  position: static;
+  background-color: blue;
+}
+
+.cont {
+  position: relative;
+  height: 100px;
+  overflow: auto;
+}
+
+table,
+tr,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  height: 50px;
+  width: 50px;
+}
+
+tr:nth-child(odd) {
+  background-color: red;
+}
