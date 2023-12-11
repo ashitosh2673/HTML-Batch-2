@@ -1,0 +1,74 @@
+/* Element Selector */
+p {
+  color: green;
+  font-size: 10px;
+}
+
+/* Class Selector */
+.testcss {
+  color: red;
+}
+
+/* ID Selector */
+#testid {
+  color: yellow;
+}
+
+/* Universal Selector */
+/* * {
+  color: blue;
+  background-color: black;
+} */
+
+/* body {
+  background-color: white;
+} */
+
+/* Combined Selector */
+
+article {
+  color: blueviolet;
+  padding: 10px;
+}
+
+div {
+  color: blueviolet;
+  padding: 10px;
+}
+
+article,
+div {
+  color: blueviolet;
+  padding: 10px;
+}
+
+/* attribute Selector */
+a[href] {
+  color: red;
+}
+
+/* attribute along with value */
+a[href="https://www.google.com"]
+{
+  color: green;
+}
+
+p[class~="attributes"] {
+  color: blue;
+}
+
+p[class|="test"] {
+  color: blue;
+}
+
+/* p[class^="test"] {
+  color: pink;
+}
+
+p[class$="test"] {
+  color: pink;
+} */
+
+p[class*="attributes"] {
+  color: orange;
+}
