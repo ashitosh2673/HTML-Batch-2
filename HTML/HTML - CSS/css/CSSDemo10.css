@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  border: 5px solid black;
+  /* align-items: flex-start; */
+  /* flex-direction: column; */
+  /* flex-wrap: wrap; */
+
+  height: 500px;
+  align-items: center;
+  /* flex-flow: column wrap; */
+  /* 
+  justify-content: center;*/
+  /* align-items: flex-start; */
+}
+
+.item {
+  /* flex-grow: 1; */
+  /* flex: 0 0 200px; */
+}
+
+.flex-item-1 {
+  order: 2;
+  background-color: red;
+  align-self: flex-start;
+  /* flex-shrink: 2; */
+  /* flex-basis: 200px; */
+  /* padding-top: 20px; */
+}
+
+.flex-item-2 {
+  background-color: orange;
+  align-self: flex-end;
+  /* padding-bottom: 30px; */
+  /* flex-shrink: 1; */
+}
+
+.flex-item-3 {
+  background-color: yellow;
+  /* padding: 50px; */
+  /* flex-shrink: 1; */
+}
+
+.flex-item-4 {
+  background-color: green;
+}
+
+.flex-item-5 {
+  background-color: blue;
+}
+
+.flex-item-6 {
+  background-color: indigo;
+}
+
+.flex-item-7 {
+  background-color: violet;
+}
+
+.flex-item-8 {
+  background-color: black;
+}
+
+.flex-item-9 {
+  background-color: white;
+}
+
+.flex-item-10 {
+  background-color: gray;
+}

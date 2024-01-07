@@ -30,6 +30,27 @@ td {
   width: 50px;
 }
 
-tr:nth-child(odd) {
+tr:nth-child(3) {
   background-color: red;
+}
+
+.container {
+  /* position: relative; */
+  clear: left;
+}
+
+.hover-class {
+  /* visibility: hidden; */
+  position: absolute;
+  display: none;
+}
+.absolute-prop:hover {
+  /* visibility: visible; */
+  background-color: red;
+
+  position: absolute;
+}
+
+.hover-clas1 {
+  visibility: hidden;
 }

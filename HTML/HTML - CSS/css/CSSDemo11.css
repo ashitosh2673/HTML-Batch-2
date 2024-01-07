@@ -1,0 +1,114 @@
+.grid-container {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* grid-template-columns: auto auto auto auto;*/
+  /* grid-template-rows: auto auto auto auto; */
+
+  /* grid-template: 100px 120px 200px / auto auto auto; */
+  /* grid-template: auto auto auto / auto auto auto; */
+  /* column-gap: 10px;
+  row-gap: 20px; */
+  /* gap: 20px 10px; */
+
+  /* justify-content: center;
+  align-items: center; */
+
+  /* height: 500px; */
+  /* border: 5px solid black; */
+  /* grid-auto-flow: column; */
+  grid-template-areas:
+    "header header header"
+    "sidebar maincontent maincontent"
+    "footer footer footer";
+
+  grid-auto-flow: row;
+}
+
+.item-1 {
+  background-color: red;
+  /* padding-top: 10px; */
+  /* grid-column-start: 1;
+  grid-column-end: 3; */
+  /* grid-column: 1 / 4; */
+  /* grid-column: span 3; */
+  /* grid-row-start: 1;
+  grid-row-end: 4; */
+  /* grid-row: 1 / 3;
+  grid-area: 1 /1/ 3 / 4; */
+  /* grid-row-start grid-column-start grid-row-end grid-column-end */
+  grid-area: header;
+  /* height: 100px; */
+}
+
+.item-2 {
+  background-color: orange;
+  /* padding-bottom: 30px; */
+  grid-area: sidebar;
+  /* height: 100vh; */
+}
+
+.item-3 {
+  background-color: yellow;
+  /* padding-top: 15px; */
+  grid-area: maincontent;
+  /* height: 100vh; */
+}
+
+.item-4 {
+  background-color: green;
+  grid-area: footer;
+  /* height: 100px; */
+}
+
+.item-5 {
+  background-color: blue;
+}
+
+.item-6 {
+  background-color: indigo;
+}
+
+.item-7 {
+  background-color: violet;
+}
+
+.item-8 {
+  background-color: black;
+}
+
+.item-9 {
+  background-color: white;
+}
+
+.item-10 {
+  background-color: gray;
+}
+
+/* Media type */
+/* 
+All
+print
+screen
+speech
+ */
+@media screen and (max-width: 600px) {
+  .grid-container {
+    background-color: black;
+    grid-template-areas:
+      "header header"
+      "sidebar maincontent "
+      "sidebar sidebar "
+      "footer footer ";
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .grid-container {
+    background-color: black;
+    grid-template-areas:
+      "header "
+      "maincontent  "
+      "sidebar  "
+      "footer  ";
+  }
+}

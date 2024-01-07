@@ -1,0 +1,53 @@
+.wo-transform {
+  background-color: aqua;
+}
+
+.w-transform {
+  background-color: aqua;
+  height: 100px;
+  width: 100px;
+  /* transform: translateX(100px);
+  transform: translateY(100px); */
+  /* transform: translate(100px, 100px); */
+  /* transform: rotate(45deg); */
+  /* transform: skew(45deg, 45deg); */
+  /* transform: skewX(45deg); */
+  /* transform: scale(2, 1.5); */
+  /* transform: skewY(45deg); */
+  /* transform: matrix(1, 0.5, 0.5, 1, 0, 0); */
+  /* first - scale - x;
+  - second - skew - y;
+    - third - skew - x;
+        - fourth - scale - y;
+            - fifth - translate - x;
+            - sixth - translate - y;
+  
+  */
+
+  transition-timing-function: ease-out;
+  transition-duration: 5s;
+  transition-property: width, height, background-color, rotate;
+}
+
+.w-transform:hover {
+  /* transform: scale(2, 2); */
+  /* transition: transform 3s; */
+  transition-timing-function: ease-out;
+  /* transition-delay: 5s; */
+  transition-duration: 5s;
+  transition-property: width, height, background-color, transform;
+  height: 300px;
+  width: 300px;
+  background-color: red;
+  transform: rotate(180deg);
+}
+
+.class-1 {
+  background-color: red;
+  position: relative;
+  top: 50px;
+}
+
+.zindex {
+  background: url(./../Image/cat/photo-1529778873920-4da4926a72c2.avif);
+}
