@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link id="theme" rel="stylesheet" href="./css/CSSDemo8.css" />
+  </head>
+  <body>
+    <!-- Transform Properties -->
+    <div class="wo-transform">Without transform property</div>
+    <div class="w-transform">With transform property</div>
+
+    <!-- z- index property -->
+    <div class="class-1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+      voluptatum, voluptate, quibusdam, quia voluptas quos quod voluptatibus
+      quas quae quidem dolorum. Quisquam voluptatum, voluptate, quibusdam, quia
+      voluptas quos quod voluptatibus quas quae quidem dolorum.
+    </div>
+
+    <div class="zindex">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro sint sunt
+      eveniet officiis ipsa quae rerum saepe! Dignissimos illum molestiae
+      eligendi molestias animi, expedita ipsum corporis beatae, laborum
+      voluptatum quasi!
+      <img
+        src="./Image/cat/photo-1529778873920-4da4926a72c2.avif"
+        height="200px"
+        width="200px"
+      />
+    </div>
+
+    <div>
+      <img
+        src="./Image/cat/photo-1529778873920-4da4926a72c2.avif"
+        height="200px"
+        width="200px"
+      />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptas
+      assumenda nihil dolore aspernatur, quis vitae nobis placeat nam ad, maxime
+      consequuntur quae nisi possimus debitis praesentium earum, similique
+      doloribus.
+    </div>
+
+    <!-- <div style="position: relative">
+      <p class="p1" style="background-color: aquamarine; position: relative">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+        voluptas assumenda nihil dolore aspernatur, quis vitae nobis placeat nam
+        ad, maxime consequuntur quae nisi possimus debitis praesentium earum,
+        similique doloribus.
+      </p>
+
+      <p class="p2" style="background-color: red; position: absolute; top: 0">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
+        tempore officiis numquam eius illo nulla temporibus! Alias quae sequi
+        neque ad, architecto qui saepe, error laudantium, earum ducimus
+        aspernatur excepturi! Natus exercitationem dignissimos ex soluta aliquid
+        at illum cum dolore sequi optio expedita inventore corrupti maiores,
+        consequatur voluptatum sint saepe, accusamus similique fugiat! At quae
+        quo maiores, omnis aperiam recusandae! Temporibus repellat consectetur,
+        repellendus reprehenderit cupiditate eligendi ipsam tenetur! Molestiae
+        quidem temporibus a voluptates amet rem aliquid earum perferendis
+        accusantium sapiente enim, expedita, excepturi, repellat possimus quae!
+        Illum, labore saepe! Quidem porro, labore assumenda iure voluptatibus
+        ipsam ipsum! Fuga, vel obcaecati asperiores architecto excepturi error,
+        odit ab ea pariatur delectus nisi sapiente. Nihil quis consequatur
+        maiores, unde iste exercitationem iure? Quis dolores a, reiciendis,
+        error explicabo odit accusamus ad dolore voluptates libero enim eaque
+        maiores nulla aperiam! Itaque aspernatur rem eos voluptate. Aliquam,
+        reiciendis a! Optio commodi adipisci dolores dolorem. Voluptatum
+        nesciunt sunt laudantium iste, explicabo consequuntur eos. Voluptatibus
+        suscipit ipsum, ullam perferendis totam a consectetur, ipsam deserunt,
+        fugit minima recusandae asperiores quas nisi? Fugit dolorem
+        necessitatibus at accusantium dicta. Quos vitae, numquam incidunt
+        assumenda dignissimos ullam autem deleniti eum possimus culpa,
+        cupiditate maiores, corporis consequuntur nemo repudiandae. Ab ex
+        aliquam eum corrupti facere laborum, dolores doloremque molestiae
+        quisquam. Molestias? Odio cum nostrum aspernatur quibusdam quas at
+        perferendis accusamus dignissimos iste eos eum maxime a atque magni
+        libero harum sint animi molestias recusandae, asperiores temporibus. At
+        laborum fugiat iste nesciunt! Temporibus eius eligendi similique maxime,
+        inventore consequuntur non sapiente! Inventore vitae error, cumque magni
+        adipisci fugit quidem unde impedit nemo earum, ab ullam quibusdam
+        itaque, nobis autem. Earum, expedita quibusdam? Fugiat dolorem a magnam
+        cupiditate quisquam iusto fuga ipsum deleniti possimus consequatur
+        praesentium obcaecati laborum dolore cum esse voluptatibus placeat omnis
+        rerum quis expedita libero earum, nihil harum. Hic, odit?
+      </p>
+    </div> -->
+
+    <!-- z - Index
+      Z -index only works on positioned elements(position: absolute, position: relative, position: fixed, or position: sticky).
+      An element with greater stack order is always in front of an element with a lower stack order.
+     -->
+    <div style="position: relative">
+      <div style="background-color: red">Content 1</div>
+      <div style="background-color: green; position: absolute; top: 0">
+        Content 2 for Z -index
+      </div>
+    </div>
+
+    <style>
+      .container {
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+
+        height: 100vh;
+      }
+
+      .tooltip {
+        display: none;
+      }
+
+      .container:hover .tooltip {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: red;
+        color: white;
+        padding: 10px;
+      }
+    </style>
+
+    <div class="container">
+      Test the tooltip
+      <p class="tooltip">This my tooltip Content</p>
+    </div>
+  </body>
+</html>

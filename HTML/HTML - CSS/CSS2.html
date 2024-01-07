@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="./css/CSSDemo2.css"
+      type="text/css"
+      media="screen"
+    />
+    <style></style>
+  </head>
+  <body>
+    <!-- Pseudo Class Selector -->
+    <!-- 
+        It is used to select the elements on the basis of their state.
+        Below are the pseudo class selectors:
+        - :link: It is used to select the unvisited links.
+        - :visited: It is used to select the visited links.
+        - :hover: It is used to select the elements when we move the mouse over them.
+        - :active: It is used to select the elements when we click on them.
+        - :focus: It is used to select the elements when we focus on them.
+        - :first-child: It is used to select the first child of the parent element.
+        - :last-child: It is used to select the last child of the parent element.
+     -->
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./demo2.html">About Us</a></li>
+        <!-- <li><a href="#">Contact Us</a></li> -->
+        <li><a href="./demo3.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <input type="text" placeholder="Enter your name" disabled />
+
+    <!-- Pseudo Elements -->
+    <!-- 
+        It is used to apply styling to the specific parts of the element.
+        Below are the pseudo elements:
+        - ::first-line: It is used to select the first line of the element.
+        - ::first-letter: It is used to select the first letter of the element.
+        - ::before: It is used to add content before the element.
+        - ::after: It is used to add content after the element.
+     -->
+    <div>
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+      <div>
+        <span>Span 1</span>
+        <p>Paragraph 3</p>
+      </div>
+    </div>
+    <p>Paragraph 4</p>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi
+      perspiciatis quam praesentium inventore esse reprehenderit ipsa doloremque
+      nisi, expedita cupiditate, nemo ducimus tempora et a alias aliquid
+      nesciunt. Delectus, sit. Veritatis aliquam corporis reprehenderit ipsum
+      beatae expedita consectetur nemo voluptas fugiat ipsa enim sit officia,
+      illum quos, reiciendis cumque labore, mollitia est fugit distinctio autem
+      adipisci quas. Dicta, corrupti architecto! Corporis accusantium quae
+      delectus, consequuntur repellendus porro placeat vel, sequi odit optio
+      animi dolorem dignissimos fugit? Delectus repudiandae cumque, quaerat non
+      quas fuga assumenda ducimus architecto illo atque repellendus molestiae.
+      Expedita quidem fuga alias aperiam eius delectus aut quaerat magnam
+      assumenda est voluptatum facilis rerum, quia obcaecati culpa quae veniam
+      deserunt tenetur odio iusto enim quis dolorum dolor! Nobis, nisi.
+      Reiciendis impedit quasi a. Ullam doloribus voluptatem dignissimos
+      obcaecati, nam, voluptatibus quo incidunt odio tempora laborum harum
+      perferendis tempore officiis nisi exercitationem impedit laudantium
+      distinctio pariatur quos unde. Sapiente, molestiae. Architecto, animi
+      asperiores eaque dolore eveniet, numquam, sunt accusantium velit sit id
+      nihil consectetur nesciunt sapiente deserunt voluptatem similique
+      voluptate eos dolor qui recusandae dicta nostrum labore. Suscipit, quam
+      quis. Neque porro quis qui, vel, velit illo magni placeat exercitationem
+      veritatis corrupti consequatur quo. Accusantium, dolore reiciendis placeat
+      deserunt et consectetur fugit cumque ad dignissimos! Consequatur quibusdam
+      minima laboriosam illo. Ullam nulla, eaque, enim reiciendis incidunt
+      distinctio animi harum amet iusto reprehenderit deleniti iste molestias
+      alias voluptatem a sint tempore. Nulla odio vero sit quibusdam, architecto
+      a repellat vel at. Natus tempora molestias exercitationem esse neque
+      beatae quaerat quo blanditiis sunt officia doloremque animi illum, magnam
+      distinctio dolorum praesentium voluptatum harum architecto eveniet eius.
+      Tempora praesentium quisquam cupiditate animi a. Odio, a cumque voluptate
+      dignissimos animi dolores nulla nisi consectetur ducimus quibusdam
+      reprehenderit libero fugiat aliquam laudantium quo maxime saepe sint
+      voluptates temporibus, deleniti facere eius error! Similique, iusto
+      explicabo.
+    </p>
+
+    <!-- Combinators Selector -->
+    <!-- 
+        It is used to select the elements on the basis of their relationship with other elements.
+        Below are the combinators:
+        - Descendant Selector: It is used to select the elements which are inside the other elements.
+          - It is also known as space selector. The descendant selector selects all elements that are descendants of a specified element. A descendant element could be a child, grandchild, great-grandchild, and so on, of the specified element. 
+          - Below is the example of descendant selector:
+            div p {
+              background-color: yellow;
+            }
+
+            <div>
+              <p>Paragraph 1</p>
+              <p>Paragraph 2</p>
+              <article>
+                <p>Paragraph 3</p>
+              </article>
+              <p>Paragraph 6</p>
+            </div>
+            <p>Paragraph 4</p>
+            <p>Paragraph 5</p>
+
+          - The above example will select all the p elements which are inside the div element.  
+
+        - Child Selector: It is used to select the elements which are direct child of the other elements.
+          - It is also known as > selector. The child selector selects all elements that are the children of a specified element. A child element is an element that is directly nested inside another element.
+          - Below is the example of child selector:
+            div > p {
+              background-color: yellow;
+            }
+
+            <div>
+              <p>Paragraph 1</p>
+              <p>Paragraph 2</p>
+              <article>
+                <p>Paragraph 3</p>
+              </article>
+              <p>Paragraph 6</p>
+            </div>
+            <p>Paragraph 4</p>
+            <p>Paragraph 5</p>
+
+          - The above example will select all the p elements which are direct child of the div element.
+
+        - Adjacent Sibling Selector: It is used to select the elements which are next to the other elements.
+          - It is also known as + selector. The adjacent sibling selector selects all elements that are the adjacent siblings of a specified element. An adjacent sibling is a sibling element that shares the same parent element.
+          - Below is the example of adjacent sibling selector:
+            div + p {
+              background-color: yellow;
+            }
+
+            <div>
+              <p>Paragraph 1</p>
+              <p>Paragraph 2</p>
+              <article>
+                <p>Paragraph 3</p>
+              </article>
+              <p>Paragraph 6</p>
+            </div>
+            <p>Paragraph 4</p>
+            <p>Paragraph 5</p>
+
+          - The above example will select all the p elements which are next to the div element.
+
+        - General Sibling Selector: It is used to select the elements which are next to the other elements.
+          - It is also known as ~ selector. The general sibling selector selects all elements that are siblings of a specified element. A sibling element is an element that shares the same parent element.
+          - Below is the example of general sibling selector:
+            div ~ p {
+              background-color: yellow;
+            }
+
+            <div>
+              <p>Paragraph 1</p>
+              <p>Paragraph 2</p>
+              <article>
+                <p>Paragraph 3</p>
+              </article>
+              <p>Paragraph 6</p>
+            </div>
+            <p>Paragraph 4</p>
+            <p>Paragraph 5</p>
+
+          - The above example will select all the p elements which are next to the div element.
+
+     -->
+    <div>
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+      <article>
+        <p>Paragraph 3</p>
+      </article>
+      <p>Paragraph 6</p>
+    </div>
+    <p>Paragraph 4</p>
+    <p>Paragraph 5</p>
+
+    <div class="class1 test123 test" id="id1">Test for specificity</div>
+  </body>
+</html>

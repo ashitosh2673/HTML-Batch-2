@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link id="theme" rel="stylesheet" href="./css/CSSDemo9.css" />
+  </head>
+  <body>
+    <!-- Display Property -->
+    <!-- displa : block - 
+    display: inline
+    display: inline-block
+    -->
+    <div>
+      This is my block content <span>Test for span</span> text continuoes here
+    </div>
+
+    <span> This is my span content </span>
+    <div style="background-color: brown">COntent 1</div>
+    <div style="background-color: brown">COntent 2</div>
+    <div style="background-color: brown">COntent 3</div>
+    <div style="background-color: green; padding: 10px">
+      <div style="background-color: brown">COntent 1</div>
+      <div style="background-color: brown">COntent 2</div>
+      <div style="background-color: brown">COntent 3</div>
+    </div>
+
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+
+    <div style="margin: 10px">
+      <div style="background-color: brown; display: list-item">COntent 1</div>
+      <div style="background-color: brown; display: list-item">COntent 2</div>
+      <div style="background-color: brown; display: list-item">COntent 3</div>
+    </div>
+
+    <table>
+      <tr>
+        <td>Item 1</td>
+        <td>Item 2</td>
+        <td>Item 3</td>
+      </tr>
+      <tr>
+        <td>Item 1</td>
+        <td>Item 2</td>
+        <td>Item 3</td>
+      </tr>
+      <tr>
+        <td>Item 1</td>
+        <td>Item 2</td>
+        <td>Item 3</td>
+      </tr>
+    </table>
+
+    <div class="table" style="display: table">
+      <div style="display: table-caption">This my table tiele</div>
+      <div class="row" style="display: table-row">
+        <div class="cell" style="display: table-cell">Row 1 Cell 1</div>
+        <div class="cell" style="display: table-cell">Row 1 Item 2</div>
+        <div class="cell" style="display: table-cell">Row 1 Item 3</div>
+      </div>
+      <div class="row" style="display: table-row">
+        <div class="cell" style="display: table-cell">Row 2 Item 1</div>
+        <div class="cell" style="display: table-cell">Row 2 Item 2</div>
+        <div class="cell" style="display: table-cell">Row 2Item 3</div>
+      </div>
+      <div class="row" style="display: table-row">
+        <div class="cell" style="display: table-cell">Row 3 Item 1</div>
+        <div class="cell" style="display: table-cell">Row 3 Item 2</div>
+        <div class="cell" style="display: table-cell">Row 3 Item 3</div>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <div style="width: 100px; height: 100px; margin: 10px">COntent 1</div>
+      <div style="width: 100px; height: 100px; margin: 10px">COntent 2</div>
+      <div style="width: 100px; height: 100px; margin: 10px">COntent 3</div>
+      <div style="width: 100px; margin: 10px; height: 100px; margin: 10px">
+        COntent 4
+      </div>
+      <div style="width: 100px; margin: 10px; height: 100px; margin: 10px">
+        COntent 5
+      </div>
+      <div style="width: 100px; margin: 10px; height: 100px; margin: 10px">
+        COntent 6
+      </div>
+      <div style="width: 100px; margin: 10px; height: 100px; margin: 10px">
+        COntent 7
+      </div>
+      <div style="width: 100px; margin: 10px; height: 100px; margin: 10px">
+        COntent 8
+      </div>
+      <div style="width: 100px; margin: 10px; height: 100px; margin: 10px">
+        COntent 9
+      </div>
+      <div style="width: 100px; margin: 10px; height: 100px; margin: 10px">
+        COntent 10
+      </div>
+    </div>
+
+    <style>
+      .flex-cont {
+        display: flex;
+      }
+      .child {
+        height: 100px;
+        width: 100px;
+        align-items: center;
+        background-color: brown;
+      }
+    </style>
+    <div style="height: 500px; width: 100%" class="flex-cont">
+      <div class="child">Content 1</div>
+      <div class="child">Content 2</div>
+      <div class="child">Content 3</div>
+    </div>
+  </body>
+</html>
