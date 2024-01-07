@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   function updateData() {
+      //     document.getElementById("unique-id").innerHTML = "Hello World";
+      //     document.getElementsByClassName("test-class")[0].style.color = "red";
+      //     document.getElementsByTagName("p")[0].style.fontSize = "30px";
+
+      //     document.querySelector("p.test-class").innerHTML = "Hello World!!!!!";
+
+      //     const abc = document.querySelectorAll("p");
+      //     console.log("abc", abc);
+      //     abc.forEach((element) => {
+      //       element.style.fontSize = "30px";
+      //     });
+
+      //     // [1].style.fontSize = "30px";
+      //   }
+
+      function handleOperator(firstVariable, secondVariable) {
+        console.log("my Value", firstVariable, secondVariable);
+
+        // Arithmatic Operators
+
+        // console.log("Addition", firstVariable + secondVariable);
+        // console.log("Sub", firstVariable - secondVariable);
+        // console.log("multi", firstVariable * secondVariable);
+        // console.log("div", firstVariable / secondVariable);
+
+        // console.log("cube", secondVariable ** 4);
+        // console.log("remainder", firstVariable % secondVariable);
+        // console.log("increment", firstVariable++);
+        // console.log("decreament", secondVariable--);
+
+        // firstVariable *= secondVariable;
+
+        result = firstVariable % secondVariable;
+
+        console.log("firstvarialbe", result, firstVariable, secondVariable);
+
+        1 === "1"; // false
+        // let message = "equal";
+        // if (firstVariable !== secondVariable) {
+        //   message = "equal";
+        // } else {
+        //   message = "not equal";
+        // }
+
+        // if (firstVariable >= secondVariable) {
+        //   message = "first is greater";
+        // } else if (firstVariable <= secondVariable) {
+        //   message = "second is greater";
+        // } else {
+        //   message = "not equal";
+        // }
+
+        // message = firstVariable > 1 && secondVariable > 3 ? "true" : "false";
+        message = firstVariable ?? secondVariable;
+
+        // console.log("", message);
+
+        // Logical Operators
+        // true && false  = false
+        // false && true  = false
+        // false && false = false
+        // true && true   = true
+
+        // true || false  = true
+        // false || true  = true
+        // false || false = false
+        // true || true   = true
+
+        // firstVariable = 2
+        // secondVariable = 3
+        if (firstVariable > 1 && !(secondVariable > 3)) {
+          console.log("true");
+        } else {
+          console.log("false");
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Javascript Selector -->
+
+    <!-- getElemenetById -->
+    <!-- 
+        Selects an element based on its id.
+        Example: 
+                document.getElementById("unique-id").innerHTML = "Hello World";
+     -->
+    <!-- <p id="unique-id" class="test-class">This is my first dummy text</p>
+    <p id="unique-id-1" class="test-class">This is my second dummy text</p>
+
+    <button onclick="updateData()">Update UI</button> -->
+
+    <!-- getElemenetByClassName 
+         Selects all elements with the given class.
+        Example: 
+                document.getElementsByClassName("test-class")[0].style.color = "red";
+
+    -->
+
+    <!-- getElemenetByTagName 
+         Selects all elements with the given tag name.
+        Example: 
+                document.getElementsByTagName("p")[0].style.fontSize = "30px";
+
+    -->
+
+    <!-- querySelector 
+         Selects the first element that matches the given CSS selector.
+        Example: 
+                document.querySelector(".test-class").innerHTML = "Hello World!!!!!";
+
+    -->
+
+    <!-- querySelectorAll 
+         Selects all elements that match the given CSS selector.
+        Example: 
+                const abc = document.querySelectorAll("p");
+                console.log("abc", abc);
+                abc.forEach((element) => {
+                  element.style.fontSize = "30px";
+                });
+
+    -->
+
+    <!-- Javascript Operators  -->
+    <button onclick="handleOperator(2, 3)">Click Me to Calculate</button>
+
+    <!--  Arithmatic Operators in Javascript -->
+
+    <!-- 
+        Below are the arithmatic Operators: 
+
+        +  for addition
+        - for substraction
+        * for multiplication
+        / for division
+        ** Exponential
+        % for remainder
+        ++ increment
+        -- decreament
+     -->
+
+    <!-- Conditional Operators
+    
+        Below are the conditional Operators in the Javascript
+        
+        == for equal
+        === for strict equal ( With type check)
+        != for not equal
+        !== for strict not equal ( With type check)
+        > for greater than
+        < for less than
+        >= for greater than or equal to
+        <= for less than or equal to
+        ?? for nullish coalescing operator
+
+        Logical Operators
+
+        && for and
+        || for or
+        ! for not        
+    -->
+
+    <script>
+      function inptvalueCatch(value) {
+        console.log("value", value);
+      }
+
+      function inptvalueCatch1(value) {
+        console.log("value", value);
+      }
+    </script>
+
+    <input
+      type="text"
+      id="firstVariable"
+      value="mouseenter"
+      ondblclick="inptvalueCatch(this.value)"
+    />
+    <input
+      type="text"
+      id="firstVariable"
+      value="moueseleave"
+      onmouseleave="inptvalueCatch1(value)"
+    />
+
+    <!-- Javascript String Methods -->
+
+    <!--  string length -->
+    <script>
+      function callFunction() {
+        let string = "hello, World!!! Hello IT Shaala, Hello Students";
+        console.log(string.length);
+        console.log("index of ", string.indexOf("World"));
+        console.log("slice", string.slice(0, 5));
+        console.log(string.slice(6));
+        console.log(string.slice(-5));
+        console.log("dsf", string.slice(0, -5));
+        console.log("substring", string.substring(0, 6));
+        console.log("substr", string.substr(1, 7));
+        console.log("without regex", string.replace("World", "By World"));
+        console.log("with regex", string.replace(/World/gi, "By World"));
+        console.log(string.replaceAll(/World/gi, "By World"));
+
+        console.log("Covert to uppercase : ", string.toUpperCase());
+        console.log("Covert to lowercase", string.toLowerCase());
+        console.log(string.trim());
+        console.log(string.trimStart());
+        console.log(string.trimEnd());
+        console.log(string.charAt(1));
+        console.log(string.charCodeAt(1));
+        console.log(string.split(","));
+        console.log(string.concat(". This is my new string"));
+
+        console.log("By using + operator", string + ". This is my new string");
+
+        console.log(
+          "By using template literals",
+          `${string}. This is 
+            my
+            new string`
+        );
+
+        console.log("By using Numbers", 1 + "1");
+
+        console.log("first index of", string.indexOf("Hello", 10));
+        console.log("last index of", string.lastIndexOf("Hello"));
+        console.log("includes", string.includes("Hello0"));
+        console.log("startsWith", string.startsWith("Hello"));
+        console.log("endsWith", string.endsWith("Students"));
+        console.log("search", string.search(/Hello/gi));
+        // console.log('repeat', string.repeat(2));
+        let string1 = "1";
+        console.log("padStart", string1.padStart(5, "0"));
+        // 00001
+        console.log("padEnd", string1.padEnd(4, "0"));
+        // 1000
+        console.log("match", string.match(/Hello/g));
+        console.log("matchall", string.matchAll("Hello"));
+
+        // Number Methods
+        let number = 2;
+        console.log("toFixed", number.toFixed(2));
+        console.log("toPrecision", number.toPrecision(4));
+        console.log("toExponential", number.toExponential(2));
+        console.log("toString - by number", typeof number);
+        console.log("toString - by string ", typeof number.toString());
+        console.log("Number : 10", Number(10));
+        console.log("Number : 10.22", Number(10.22));
+        console.log("Number : string 10 -", Number("10"));
+        console.log("Number : strinf 10,20 - ", Number("10, 20"));
+        console.log("Number : string 10 string - ", Number("10 string"));
+        console.log("Number : string - ", Number("string 10"));
+
+        console.log("parseInt : 10", parseInt(10));
+        console.log("parseInt : 10.22", parseInt(10.22));
+        console.log("parseInt : 10 -", parseInt("10"));
+        console.log("parseInt : strinf 10,20 - ", parseInt("10, 20"));
+        console.log("parseInt : string 10 string - ", parseInt("10 string"));
+        console.log("parseInt : string 10 - ", parseInt("string 10"));
+
+        let number1 = 10;
+        console.log("isNaN : 10", Number.isInteger(number1));
+        console.log(`isNaN : '10'`, Number.isInteger("10"));
+      }
+    </script>
+
+    <button onclick="callFunction()">
+      Click Me to Call the string functions
+    </button>
+
+    <!--  string indexOf -->
+    <!--  string slice -->
+    <!--  string substring -->
+    <!--  string substr -->
+    <!--  string replace -->
+    <!--  string replaceAll -->
+    <!--  string toUpperCase -->
+    <!--  string toLowerCase -->
+    <!--  string trim -->
+    <!--  string charAt -->
+    <!--  string charCodeAt -->
+    <!--  string split -->
+
+    <!-- Javascript Array Methods -->
+
+    <!--  array length -->
+    <!--  array indexOf -->
+    <!--  array slice -->
+    <!--  array splice -->
+    <!--  array push -->
+    <!--  array pop -->
+    <!--  array shift -->
+    <!--  array unshift -->
+    <!--  array concat -->
+    <!--  array join -->
+    <!--  array reverse -->
+    <!--  array sort -->
+    <!--  array filter -->
+    <!--  array map -->
+    <!--  array reduce -->
+    <!--  array forEach -->
+
+    <!-- Javascript Object Methods -->
+
+    <!--  object keys -->
+    <!--  object values -->
+    <!--  object entries -->
+    <!--  object hasOwnProperty -->
+    <!--  object assign -->
+    <!--  object freeze -->
+    <!--  object seal -->
+    <!--  object isFrozen -->
+    <!--  object isSealed -->
+
+    <!-- Javascript Date Methods -->
+
+    <!--  date getDate -->
+    <!--  date getDay -->
+    <!--  date getFullYear -->
+    <!--  date getHours -->
+    <!--  date getMilliseconds -->
+    <!--  date getMinutes -->
+    <!--  date getMonth -->
+    <!--  date getSeconds -->
+    <!--  date getTime -->
+    <!--  date getTimezoneOffset -->
+    <!--  date getUTCDate -->
+    <!--  date getUTCDay -->
+    <!--  date getUTCFullYear -->
+    <!--  date getUTCHours -->
+    <!--  date getUTCMilliseconds -->
+    <!--  date getUTCMinutes -->
+    <!--  date getUTCMonth -->
+    <!--  date getUTCSeconds -->
+    <!--  date getYear -->
+    <!--  date now -->
+    <!--  date parse -->
+    <!--  date setDate -->
+    <!--  date setFullYear -->
+    <!--  date setHours -->
+    <!--  date setMilliseconds -->
+    <!--  date setMinutes -->
+    <!--  date setMonth -->
+    <!--  date setSeconds -->
+    <!--  date setTime -->
+    <!--  date setUTCDate -->
+    <!--  date setUTCFullYear -->
+    <!--  date setUTCHours -->
+  </body>
+</html>

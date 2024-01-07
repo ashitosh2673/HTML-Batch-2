@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // create a object in javascript
+      // object creationg using object literal
+
+      var emptyObj = {};
+
+      const firstName = "myname";
+
+      var person = {
+        [firstName]: "John",
+        lastName: "Doe",
+        "full name": "John Doe",
+        age: 50,
+        eyeColor: "blue",
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        },
+        department: ["IT", "HR", "Finance"],
+        marks: {
+          maths: 50,
+          science: 60,
+          english: 70,
+        },
+      };
+
+      console.log(person.myname);
+      console.log(person[`full name`]);
+      console.log(person);
+
+      person.firstName = "Rahul";
+      console.log(person.firstName);
+      console.log("fullname : ", person.fullName());
+
+      const newObj = { ...person };
+
+      newObj.firstName = "Mayur";
+
+      console.log("person : ", person);
+      console.log("New Obj : ", newObj);
+
+      // object creation using new keyword
+
+      var person1 = new Object();
+      console.log(person1);
+      person1.firstName = "John";
+      person1.lastName = "Doe";
+      person1.age = 50;
+
+      console.log("object creation using new keyword", person1);
+      delete person1.age;
+      console.log("after delete operation", person1);
+      person1.age = 50;
+      console.log("after adding age property", person1);
+
+      // object creation using constructor function
+
+      function Person(firstName, lastName, age, eyeColor) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.eyeColor = eyeColor;
+        this.fullName = function () {
+          return this.firstName + " " + this.lastName;
+        };
+      }
+
+      var person2 = new Person("John", "Doe", 30, "blue");
+      console.log("object creation using constructor function", person2);
+      var person3 = new Person("Mayur", "Doe", 40, "black");
+      console.log("object creation using constructor function", person3);
+
+      // object creation using object.create method
+      var person4 = Object.create(person2);
+      console.log("object creation using object.create method", person4);
+
+      // object creation using class
+      class PersonClass {
+        constructor(firstName, lastName, age, eyeColor) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.age = age;
+          this.eyeColor = eyeColor;
+        }
+        fullName() {
+          return this.firstName + " " + this.lastName;
+        }
+      }
+
+      var person5 = new PersonClass("John", "Doe", 30, "blue");
+      console.log("object creation using class", person5);
+      var person6 = new PersonClass("Mayur", "Doe", 40, "black");
+      console.log("object creation using class", person6);
+    </script>
+  </body>
+</html>

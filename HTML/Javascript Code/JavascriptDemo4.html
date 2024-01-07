@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Demo Class 4</title>
+  </head>
+  <body>
+    <!-- 
+        Splice - Which will add the element at the given index and remove the given number of elements from the given index
+     -->
+    <script>
+      function executeJavascript() {
+        var fruits = ["Banana", "Orange", "Apple", "Mango", "Orange"];
+        console.log("Before Splice", fruits);
+        console.log(
+          "fruits.splice(2, 1, 'Lemon', 'Kiwi') Removed List Items",
+          fruits.splice(2, 2, "Lemon", "Kiwi")
+        );
+        console.log("After splice", fruits);
+
+        //  foreach - Which will iterate the array
+        const integerList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const myNewList = [];
+        console.log("foreach", integerList);
+        integerList.forEach((element, index, arr) => {
+          myNewList.push(element * 2);
+        });
+
+        console.log("After Push in foreach method", myNewList);
+
+        //  map - Which will iterate the array and return the new array
+        const myNewList2 = integerList.map((element, index, arr) => {
+          return element;
+        });
+        console.log("After map method", myNewList2);
+
+        //  filter - Which will iterate the array and return the new array with the filtered elements
+        const myNewList3 = integerList.filter((element, index, arr) => {
+          return element > 5 && element;
+        });
+        console.log("After filter method", myNewList3);
+
+        //  reduce - Which will iterate the array and return the single value
+        const myNewList4 = integerList.reduce((accumulator, element) => {
+          return accumulator + element;
+        });
+        console.log("After reduce method", myNewList4);
+
+        //  every - Which will iterate the array and return the boolean value
+        const myNewList5 = integerList.every((element) => {
+          return element > 0;
+        });
+        console.log("After every method", myNewList5);
+
+        //  some - Which will iterate the array and return the boolean value
+        const myNewList6 = integerList.some((element) => {
+          return element > 10;
+        });
+        console.log("After some method", myNewList6);
+
+        // indexOf - Which will return the index of the given element
+        const myNewList7 = fruits.indexOf("Orange");
+        console.log("After indexOf method", myNewList7);
+
+        // lastIndexOf - Which will return the last index of the given element
+        const myNewList8 = fruits.lastIndexOf("Orange");
+        console.log("After lastIndexOf method", myNewList8);
+
+        // find - Which will return the first element of the given condition
+        const arrayObj = [
+          { id: 1, name: "Rajesh" },
+          { id: 2, name: "Ramesh" },
+          { id: 3, name: "Mukesh" },
+          { id: 4, name: "Suresh" },
+        ];
+        console.log("Before find method", arrayObj);
+        const myNewList9 = arrayObj.find((element) => {
+          return element.name === "Suresh";
+        });
+        console.log("After find method", myNewList9);
+
+        // findIndex - Which will return the first index of the given condition
+        const myNewList10 = arrayObj.findIndex((element) => {
+          return element.name === "Suresh";
+        });
+        console.log("After findIndex method", myNewList10);
+
+        //   keys - Which will return the keys of the given object
+        const arrayObj1 = [1, 2, 34, 5, 6, 7];
+        const keys1 = arrayObj1.keys();
+        console.log("After keys method", keys1);
+
+        for (const key of keys1) {
+          console.log("After keys method", key);
+        }
+
+        // keys1.forEach((element) => {
+        //   console.log("After keys method", element);
+        // });
+
+        //  values - Which will return the values of the given object
+        const values = arrayObj1.values();
+        console.log("After values method 1, 2, 34, 5, 6, 7", values);
+        for (const value of values) {
+          console.log("After values method", value);
+        }
+
+        //   entries - Which will return the entries of the given object
+        const entries = arrayObj1.entries();
+
+        for (const entry of entries) {
+          console.log("After entries method", entry);
+        }
+        // [
+        //   [0, 1],
+        //   [1, 2],
+        //   [2, 34],
+        //   [3, 5],
+        //   [4, 6],
+        //   [5, 7],
+        // ];
+        console.log("After entries method", entries);
+
+        //  incldues - Which will return the boolean value if the given element is present in the array
+        const myNewList11 = arrayObj1.includes(9);
+        console.log("After includes method", myNewList11);
+
+        const newArray = [...arrayObj1, 9];
+        console.log("After includes method", newArray);
+
+        // Math Methods
+
+        //  - round - Which will return the rounded value of the given number
+        const integerValue = 11;
+        console.log("Before round method - 10.4", integerValue);
+        const myNewList12 = Math.round(integerValue);
+        console.log("After round method", myNewList12);
+
+        //  - ceil - Which will return the rounded value of the given number
+        const integerValue1 = 10.1;
+        console.log("Before ceil method - 10.4", integerValue1);
+        const myNewList13 = Math.ceil(integerValue1);
+        console.log("After ceil method", myNewList13);
+
+        //  - floor - Which will return the rounded value of the given number
+        const integerValue2 = 10.9;
+        console.log("Before floor method - 10.9", integerValue2);
+        const myNewList14 = Math.floor(integerValue2);
+        console.log("After floor method", myNewList14);
+
+        //  - random - Which will return the random value of the given number
+        const myNewList15 = Math.round(Math.random() * 10);
+        console.log("After random method", myNewList15);
+
+        //  - max - Which will return the max value of the given number
+        const myNewList16 = Math.max(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        console.log("After max method[1, 2, 3, 4, 5, 6, 7, 8, 9]", myNewList16);
+
+        //  - min - Which will return the min value of the given number
+        const myNewList17 = Math.min(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        console.log("After min method[1, 2, 3, 4, 5, 6, 7, 8, 9]", myNewList17);
+
+        //  - pow - Which will return the power value of the given number
+        const myNewList18 = Math.pow(2, 3);
+        console.log("After pow method - 2, 3", myNewList18);
+
+        //  - sqrt - Which will return the sqrt value of the given number
+        const myNewList19 = Math.sqrt(9);
+        console.log("After sqrt method- 9", myNewList19);
+
+        //  - cbrt - Which will return the cbrt value of the given number
+        const myNewList20 = Math.cbrt(27);
+        console.log("After cbrt method -27", myNewList20);
+
+        //  - abs - Which will return the abs value of the given number
+        const myNewList21 = Math.abs(-27);
+        console.log("After abs method", myNewList21);
+
+        //  - sin - Which will return the sin value of the given number
+        const myNewList22 = Math.sin(90);
+        console.log("After sin method", myNewList22);
+      }
+    </script>
+    <button onclick="executeJavascript()">Execute Javascript Code</button>
+  </body>
+</html>
