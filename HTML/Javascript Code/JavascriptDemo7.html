@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // <!--
+      //      Object Methods in Javascript
+      //  -->
+      // 1. Object.keys() - It returns an array of keys of object.
+
+      // Example :
+      const person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+      };
+
+      console.log("original person object : ", person);
+      const keys = Object.keys(person);
+      console.log("keys : ", keys);
+
+      // 2. Object.values() - It returns an array of values of object.
+      // Exmaple  :
+      const values = Object.values(person);
+      console.log("values : ", values);
+
+      // 3. Object.entries() - It returns an array of key value pair of object.
+      // Exmaple  : [ [firstName, "John"], [lastName, "Doe"], [age: 50], eyeColor: "blue" ]
+      const entries = Object.entries(person);
+      console.log("entries : ", entries);
+
+      //   4. Object.fromEntries() - It returns an object from an array of key value pair.
+      //   Exmaple  : [ [firstName, "John"], [lastName, "Doe"], [age: 50], [eyeColor, "blue"] ]
+      //   const entries = Object.entries(person);
+      //   console.log("entries : ", entries);
+      const newPerson = Object.fromEntries(entries);
+      console.log("newPerson from fromEntries function : ", newPerson);
+
+      //   5. Object.assign() - It copies the values of all enumerable own properties from one or more source objects to a target object.
+      //   Exmaple  :
+      const rawObject = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+      };
+      console.log("rawObject : ", rawObject);
+      const newObject = Object.assign({}, rawObject);
+      console.log("new Raw Object : ", newObject);
+
+      //  or
+      const FinalObject = {
+        marks: {
+          maths: 50,
+          science: 60,
+          english: 70,
+        },
+        department: ["IT", "HR", "Finance"],
+        firstName: "Saurabh",
+      };
+
+      const thirdObject = {
+        sayHello: function () {
+          console.log("Hello");
+        },
+      };
+      console.log("FinalObject : ", FinalObject);
+      const createNewObject = Object.assign(
+        {},
+        FinalObject,
+        rawObject,
+        thirdObject
+      );
+      console.log("createNewObject : ", createNewObject);
+      console.log("FinalObject after Object.assign method : ", FinalObject);
+
+      //  spread operator
+      // const spreadObject = {
+      //     ...FinalObject,
+      //     ...rawObject,
+      //     ...thirdObject
+      // }
+
+      // console.log("spreadObject : ", spreadObject);
+
+      // 6. Object.freeze() - It freezes an object. A frozen object can no longer be changed. ( We cannot edit, delete, add property to object.)
+
+      // Example :
+
+      const personObjectFreeze = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+      };
+
+      Object.freeze(personObjectFreeze);
+      personObjectFreeze.firstName = "Mayur";
+      delete personObjectFreeze.age;
+      personObjectFreeze.department = ["IT", "HR", "Finance"];
+      console.log("personObjectFreeze : ", personObjectFreeze);
+
+      // 7. Object.seal() - It seals an object, preventing new properties from being added to it and marking all existing properties as non-configurable. Values of present properties can still be changed as long as they are writable.
+
+      // Example :
+      const personObjectSeal = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+      };
+
+      Object.seal(personObjectSeal);
+      personObjectSeal.firstName = "Mayur";
+      delete personObjectSeal.age;
+      personObjectSeal.department = ["IT", "HR", "Finance"];
+      console.log("personObjectSeal : ", personObjectSeal);
+
+      // 8. Object.isFrozen() - It checks whether an object is frozen or not. It returns true or false.
+      // Example :
+
+      const personObjectIsFrozen = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+      };
+
+      Object.freeze(personObjectIsFrozen);
+      console.log(
+        "personObjectIsFrozen : ",
+        Object.isFrozen(personObjectIsFrozen)
+      );
+
+      // 9. Object.isSealed() - It checks whether an object is sealed or not. It returns true or false.
+      // Example :
+
+      const personObjectIsSealed = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+      };
+
+      Object.seal(personObjectIsSealed);
+      console.log(
+        "personObjectIsSealed : ",
+        Object.isSealed(personObjectIsSealed)
+      );
+
+      //   10. Object.preventExtentions() - It prevents an object from being added new properties.
+
+      //   Example :
+
+      const personObjectPreventExtensions = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+      };
+
+      Object.preventExtensions(personObjectPreventExtensions);
+      personObjectPreventExtensions.firstName = "Mayur";
+      delete personObjectPreventExtensions.age;
+      personObjectPreventExtensions.department = ["IT", "HR", "Finance"];
+      console.log(
+        "personObjectPreventExtensions : ",
+        personObjectPreventExtensions
+      );
+
+      //   11. Object.isExtensible() - It checks whether an object is extensible or not. It returns true or false.
+      console.log(
+        "personObjectIsExtensible : ",
+        Object.isExtensible(personObjectPreventExtensions)
+      );
+
+      //   12. Object.getOwnPropertyDescriptor() - It returns an object describing the configuration of a specific property on a given object.
+      //   Example :
+      //    Wriable - It defines whether the value of the property can be changed or not. It returns true or false.
+      //    Enumerable - It defines whether the property can be returned in a for/in loop. It returns true or false.
+      //    Configurable - It defines whether the property can be deleted or not. It returns true or false.
+
+      const personObjectGetOwnPropertyDescriptor = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+      };
+
+      Object.freeze(personObjectGetOwnPropertyDescriptor);
+
+      const descriptor = Object.getOwnPropertyDescriptor(
+        personObjectGetOwnPropertyDescriptor,
+        "firstName"
+      );
+
+      //    for (let key in personObjectGetOwnPropertyDescriptor) {
+      console.log("descriptor : ", descriptor);
+
+      //  13. Object.getOwnPropertyDescriptors() - It returns an object containing all own property descriptors for an object.
+      //  Example :
+
+      const personObjectGetOwnPropertyDescriptors = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+      };
+
+      Object.freeze(personObjectGetOwnPropertyDescriptors);
+
+      const descriptors = Object.getOwnPropertyDescriptors(
+        personObjectGetOwnPropertyDescriptors
+      );
+
+      console.log("descriptors : ", descriptors);
+
+      //   14. Object.defineProperty() - It defines a new property directly on an object, or modifies an existing property on an object, and returns the object.
+      //   Example :
+
+      const personObjectDefineProperty = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+      };
+
+      Object.defineProperty(personObjectDefineProperty, "firstName", {
+        value: "Mayur",
+        writable: false,
+        enumerable: false,
+        configurable: false,
+      });
+
+      console.log("personObjectDefineProperty : ", personObjectDefineProperty);
+
+      for (let key in personObjectDefineProperty) {
+        console.log("key : ", key);
+      }
+
+      // 15. Object.defineProperties() - It defines new or modifies existing properties directly on an object, returning the object.
+      // Example :
+
+      const personObjectDefineProperties = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+      };
+
+      Object.defineProperties(personObjectDefineProperties, {
+        firstName: {
+          value: "Mayur",
+          writable: false,
+          enumerable: false,
+          configurable: false,
+        },
+        lastName: {
+          value: "Mayur",
+          writable: false,
+          enumerable: false,
+          configurable: false,
+        },
+      });
+
+      console.log(
+        "personObjectDefineProperties : ",
+        personObjectDefineProperties
+      );
+
+      //   16. Object.getOwnPropertyNames() - It returns an array of all properties (including non-enumerable properties except for those which use Symbol) found directly in a given object.
+      //   Example :
+
+      const personObjectGetOwnPropertyNames = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+      };
+
+      console.log(
+        "propertyNames : ",
+        Object.keys(personObjectGetOwnPropertyNames)
+      );
+
+      const propertyNames = Object.getOwnPropertyNames(
+        personObjectGetOwnPropertyNames
+      );
+      console.log("propertyNames : ", propertyNames);
+
+      //   IIFE - Immediately Invoked Function Expression
+      //   Example :
+
+      var abc = {
+        id: 1,
+        name: "test",
+      };
+      // function add() {
+      //     var abc - {
+      //         id: 1,
+      //         name: "test",
+      //     };
+      //     console.log("add function");
+      // }
+      (function () {
+        console.log("IIFE");
+      })();
+
+      //  IIFE with function arguments
+      // Example :
+      (function (a, b) {
+        console.log("IIFE with function arguments : ", a + b);
+      })(10, 20);
+
+      console.log(abc.id);
+    </script>
+  </body>
+</html>
