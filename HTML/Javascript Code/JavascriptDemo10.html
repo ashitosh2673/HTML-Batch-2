@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript 10</title>
+  </head>
+  <body>
+    <!-- <form>
+      <div id="parentcontainer" style="background-color: brown">
+        <input type="checkbox" name="vehicle1" value="Bike" id="vehicle1" /> I
+        have a bike<br />
+      </div>
+    </form> -->
+
+    <script>
+      //  Event Delegation:
+      //  Event delegation is a technique involving adding event listeners to a parent element instead of adding them to the descendant elements.
+
+      //   Example:
+      //   const parentcontainer = document.getElementById("parentcontainer");
+      //   parentcontainer.addEventListener(
+      //     "click",
+      //     (e) => {
+      //       console.log("parentcontainer");
+      //       const checkbox = document.getElementById("vehicle1");
+
+      //       if (checkbox.checked) {
+      //         console.log("checked");
+      //         checkbox.checked = false;
+      //       } else {
+      //         console.log("unchecked");
+      //         checkbox.checked = true;
+      //       }
+      //     },
+      //     false
+      //   );
+
+      // method chaining in javascript
+      // method chaining is a technique that can be used to simplify code that involves calling multiple functions on the same object consecutively.
+
+      // Example:
+      const person = {
+        firstName: "John",
+        lastName: "Doe",
+        setFirstName: function (firstName) {
+          this.firstName = firstName;
+          return this;
+        },
+        setLastName: function (lastName) {
+          this.lastName = lastName;
+          return this;
+        },
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        },
+      };
+
+      console.log("Exaple of function/method chaining", person.fullName());
+      person.setFirstName("John 2");
+      person.setLastName("Doe 2");
+      console.log(person.fullName());
+
+      //  Example of function/method chaining
+      console.log(
+        "Output after chaining",
+        person.setFirstName("John 3").setLastName("Doe 3").fullName()
+      );
+
+      //  function currying in javascript
+      //  Currying is a technique of evaluating function with multiple arguments, into sequence of functions with single argument.
+
+      //  Example:
+      function multiply(a, b, c) {
+        return a * b * c;
+      }
+
+      console.log("Output of multiply function", multiply(1, 2, 3));
+
+      function currying(a) {
+        return function (b) {
+          return function (c) {
+            return a * b * c;
+          };
+        };
+      }
+
+      console.log("Output of currying function", currying(1)(2)(3));
+
+      //    Another example of currying function
+
+      function getFullname(firstName) {
+        return function (lastName) {
+          return function (middleName) {
+            return firstName + " " + middleName + " " + lastName;
+          };
+        };
+      }
+
+      console.log(
+        "Output of getFullname function",
+        getFullname("John")("Doe")("Smith")
+      );
+
+      console.log(
+        "Output of getFullname function",
+        getFullname("John")("")("Smith")
+      );
+
+      //   recursion in javascript
+      //   Recursion is a technique for iterating over an operation by having a function call itself repeatedly until it arrives at a result.
+
+      //   Example:
+      function factorial(n) {
+        if (n === 0) {
+          return 1;
+        } else {
+          return n * factorial(n - 1);
+          // 5 * 4 * 3 * 2 * 1
+        }
+      }
+
+      console.log("Output of factorial function", factorial(5));
+
+      //   classes in Javascript
+      //   Classes are a template for creating objects. They encapsulate data with code to work on that data. Classes in JS are built on prototypes but also have some syntax and semantics that are not shared with ES5 class-like semantics.
+      //  Classes are introduced in ES6 and are syntactical sugar over JavaScript's existing prototype-based inheritance. The class syntax is not introducing a new object-oriented inheritance model to JavaScript. JavaScript classes provide a much simpler and clearer syntax to create objects and deal with inheritance.
+      // super method is used to call the constructor of the parent class.
+
+      //   Example:
+      class Person {
+        constructor(firstName, lastName) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+        }
+
+        fullName() {
+          return this.firstName + " " + this.lastName;
+        }
+      }
+
+      const person1 = new Person("John", "Doe");
+      console.log("Output of classes in Javascript", person1.fullName());
+
+      //   Example of inheritance in Javascript
+      //   Inheritance is an important concept in object oriented programming. In the classical inheritance, methods from base class get copied into derived class. In JavaScript, inheritance is supported by using prototype object.
+      // In class based approach we can use extends keyword to inherit the properties of parent class. In the below example, the Student class inherits the Person class using the extends keyword.
+      class Student extends Person {
+        constructor(firstName, lastName, age) {
+          super(firstName, lastName);
+          this.age = age;
+        }
+
+        getAge() {
+          return this.age;
+        }
+      }
+
+      const student1 = new Student("John", "Doe", 20);
+      console.log("Output of inheritance in Javascript", student1.getAge());
+      console.log("Output of inheritance in Javascript", student1.fullName());
+
+      //   method overriding in Javascript
+      //   Method overriding is an object-oriented programming feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its super-classes or parent classes.
+
+      //   Example:
+      class Person1 {
+        constructor(firstName, lastName) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+        }
+
+        fullName() {
+          return this.firstName + " " + this.lastName;
+        }
+      }
+
+      class Student1 extends Person1 {
+        constructor(firstName, lastName, age) {
+          super(firstName, lastName);
+          this.age = age;
+        }
+
+        getAge() {
+          return this.age;
+        }
+
+        fullName() {
+          return this.firstName + " " + this.lastName + " " + this.age;
+        }
+      }
+
+      const person2 = new Person1("John", "Doe");
+      const student2 = new Student1("John", "Doe", 20);
+      console.log(
+        "Output of method overriding in Javascript",
+        person2.fullName()
+      );
+      console.log(
+        "Output of method overriding in Javascript",
+        student2.fullName()
+      );
+
+      //   method overloading in Javascript
+      //   Method overloading is a programming concept that allows programmers to define two or more methods with the same name and in the same class. Each method has a different signature. The signature of a method is comprised of the name of the method and the type and/or order of the parameters that are passed to the method.
+      //    Method overloading is not supported in Javascript. We can achieve method overloading by checking the number of arguments passed to the function or by checking the type of arguments passed to the function.
+
+      //   Example:
+
+      function add(a, b) {
+        console.log("first one gets called");
+        return a + b;
+      }
+
+      function add(a, b, c = 0) {
+        console.log("second one gets called");
+        return a + b + c;
+      }
+
+      console.log("Output of method overloading in Javascript", add(1, 2));
+      console.log("Output of method overloading in Javascript", add(1, 2, 3));
+
+      //   Example of method overloading using arguments object
+      function add1() {
+        if (arguments.length === 2) {
+          console.log("first one gets called");
+          return arguments[0] + arguments[1];
+        } else if (arguments.length === 3) {
+          console.log("second one gets called");
+          return arguments[0] + arguments[1] + arguments[2];
+        }
+      }
+
+      console.log("Output of method overloading in Javascript", add1(1, 2));
+      console.log("Output of method overloading in Javascript", add1(1, 2, 3));
+
+      //   static methods in Javascript
+      //   Static methods are called without instantiating their class and cannot be called through a class instance. Static methods are often used to create utility functions for an application.
+
+      //   Example:
+      class Person2 {
+        constructor(firstName, lastName) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.age = 20;
+        }
+
+        fullName() {
+          return this.firstName + " " + this.lastName;
+        }
+
+        static age(age) {
+          return age;
+        }
+      }
+
+      const person3 = new Person2("John", "Doe");
+      console.log("Output of static methods in Javascript", person3.fullName());
+      console.log("Output of static methods in Javascript", Person2.age(20));
+
+      //   Polymorphism in Javascript
+
+      //   Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
+
+      //   Example:
+
+      class Person3 {
+        constructor(firstName, lastName) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+        }
+
+        fullName() {
+          return this.firstName + " " + this.lastName;
+        }
+      }
+
+      class Student3 extends Person3 {
+        constructor(firstName, lastName, age) {
+          super(firstName, lastName);
+          this.age = age;
+        }
+
+        getAge() {
+          return this.age;
+        }
+
+        fullName() {
+          return this.firstName + " " + this.lastName + " " + this.age;
+        }
+      }
+
+      const person4 = new Person3("John", "Doe");
+
+      const student4 = new Student3("John", "Doe", 20);
+
+      console.log("Output of Polymorphism in Javascript", person4.fullName());
+      console.log("Output of Polymorphism in Javascript", student4.fullName());
+
+      //   Example of Polymorphism in Javascript
+      class Person4 {
+        constructor(firstName, lastName) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+        }
+
+        fullName() {
+          return this.firstName + " " + this.lastName;
+        }
+      }
+
+      class Student4 extends Person4 {
+        constructor(firstName, lastName, age) {
+          super(firstName, lastName);
+          this.age = age;
+        }
+
+        getAge() {
+          return this.age;
+        }
+
+        fullName() {
+          return this.firstName + " " + this.lastName + " " + this.age;
+        }
+      }
+
+      const person5 = new Person4("John", "Doe");
+
+      const student5 = new Student4("John", "Doe", 20);
+    </script>
+  </body>
+</html>

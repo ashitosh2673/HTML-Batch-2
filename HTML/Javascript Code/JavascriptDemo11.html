@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Demo 11</title>
+  </head>
+  <body>
+    <div
+      id="parentdiv1"
+      style="width: 200px; height: 200px; background-color: green"
+    >
+      <div
+        id="demo"
+        style="height: 100px; width: 100px; background-color: red"
+      ></div>
+
+      <button onclick="myStopFunction()">Stop time</button>
+    </div>
+    <script>
+      // SetInterval  in Javascript
+      // The setInterval() method calls a function or evaluates an expression at specified intervals (in milliseconds).
+
+      //  Example of setInterval
+
+      const testFunction = () => {
+        const date = new Date();
+        document.write(
+          date.getHours() +
+            ":" +
+            date.getMinutes() +
+            ":" +
+            date.getSeconds() +
+            "<br/>"
+        );
+      };
+
+      setInterval(testFunction, 1000);
+      // OR
+      setInterval(() => {
+        const date = new Date();
+        document.write(
+          date.getHours() +
+            ":" +
+            date.getMinutes() +
+            ":" +
+            date.getSeconds() +
+            "<br/>"
+        );
+      }, 1000);
+
+      //  OR
+
+      setInterval(function () {
+        const date = new Date();
+        document.write(
+          date.getHours() +
+            ":" +
+            date.getMinutes() +
+            ":" +
+            date.getSeconds() +
+            "<br/>"
+        );
+      }, 1000);
+
+      // window.setInterval(testFunction, 10000);
+
+      //  Example of clearInterval
+
+      //  The clearInterval() method clears a timer set with the setInterval() method.
+
+      //  The ID value returned by setInterval() is used as the parameter for the clearInterval() method.
+
+      //  Example:
+
+      var myVar = setInterval(myTimer, 1000);
+
+      function myTimer() {
+        var d = new Date();
+        var t = d.toLocaleTimeString();
+        document.getElementById("demo").innerHTML = t;
+      }
+
+      function myStopFunction() {
+        clearInterval(myVar, 10000);
+      }
+
+      //   setTimeout() method calls a function or evaluates an expression after a specified number of milliseconds.
+
+      //   Example:
+
+      //   setTimeout(() => {
+      //     const date = new Date();
+      //     document.write(
+      //       date.getHours() +
+      //         ":" +
+      //         date.getMinutes() +
+      //         ":" +
+      //         date.getSeconds() +
+      //         "<br/>"
+      //     );
+      //   }, 10000);
+
+      //  Example of clearTimeout
+
+      //  The clearTimeout() method clears a timer set with the setTimeout() method.
+
+      //  The ID value returned by setTimeout() is used as the parameter for the clearTimeout() method.
+
+      //  Example:
+
+      var myVar = setTimeout(myTimer, 10000);
+
+      function myTimer() {
+        var d = new Date();
+        var t = d.toLocaleTimeString();
+        document.getElementById("demo").innerHTML = t;
+      }
+
+      function myStopFunction() {
+        clearTimeout(myVar);
+      }
+
+      console.log("window.innerHeight", innerHeight); // returns the height of a window's content area
+      console.log("window.innerWidth", innerWidth); // returns the width of a window's content area
+      console.log("window.outerHeight", outerHeight); // returns the height of the browser window, including toolbars/scrollbars
+      console.log("window.outerWidth", outerWidth); // returns the width of the browser window, including toolbars/scrollbars
+      console.log("window.screen.height", screen.height); // returns the height of the visitor's screen in pixels
+      console.log("window.screen.width", screen.width); // returns the width of the visitor's screen in pixels
+      console.log("windows.location", location); // returns the Location object for the window
+      console.log("windows.location.href", location.href); // returns the href (URL) of the current page
+      console.log("windows.location.hostname", location.hostname); // returns the domain name of the web host
+      console.log("windows.location.pathname", location.pathname); // returns the path and filename of the current page
+      console.log("windows.location.protocol", location.protocol); // returns the web protocol used (http: or https:)
+      console.log("windows.location.search", location.search); // returns the query portion of a URL
+      console.log("windows.location.hash", location.hash); // returns the anchor portion of a URL
+      console.log("windows.location.port", location.port); // returns the port number the web server uses for HTTP communication (80 by default)
+      console.log("windows.location.host", location.host); // returns the hostname and port number of the current page
+      console.log("windows.location.origin", location.origin); // returns the protocol, hostname and port number of the current page
+
+      // Example of window.open()
+      // window.open("https://www.google.com", "_self", "width=500,height=500");
+
+      // <div style="100px">
+      //   <p>Click the button to open a new browser window.</p
+      //   <button onclick="openWin()">Open "myWindow"</button>
+      //   <button onclick="closeWin()">Close "myWindow"</button>
+      // </div>
+    </script>
+  </body>
+</html>

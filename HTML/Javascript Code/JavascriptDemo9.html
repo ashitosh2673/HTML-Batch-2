@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Demo 9</title>
+  </head>
+  <body>
+    <div
+      id="parentdiv1"
+      style="width: 200px; height: 200px; background-color: green"
+    >
+      <div
+        id="parentChilddiv12"
+        style="height: 100px; width: 100px; background-color: red"
+      >
+        <button id="btn1">Button CLick Event</button>
+      </div>
+    </div>
+    <script>
+      //  closure
+
+      //  A closure is a function having access to the parent scope, even after the parent function has closed.
+
+      const b = 10;
+      function parentFunction() {
+        var a = 4;
+        function print() {
+          console.log(a + b);
+        }
+
+        return print;
+      }
+
+      const printFunction = parentFunction();
+      console.log(printFunction);
+      console.log("this is calling after the parent function");
+      printFunction();
+
+      //  In the above example, the inner function print() has access to the variables in the outer function parentFunction() even after the outer function has returned.
+      //  The variable a is a local variable created by parentFunction(), and print() can access it because it is declared in the parent function.
+      //  The variable b is a global variable, and can be accessed by any function.
+      //  A closure is a function having access to the parent scope, even after the parent function has closed.
+
+      // Event bubbling:
+
+      //   Example:
+      //   const parentdiv1 = document.getElementById("parentdiv1");
+      //   const parentChilddiv12 = document.getElementById("parentChilddiv12");
+      //   const btn1 = document.getElementById("btn1");
+
+      //   parentdiv1.addEventListener(
+      //     "click",
+      //     (e) => {
+      //       console.log("parentdiv1");
+      //     },
+      //     false
+      //   );
+
+      //   parentChilddiv12.addEventListener(
+      //     "click",
+      //     (event) => {
+      //       event.stopImmediatePropagation;
+      //       console.log("parentChilddiv12");
+      //     },
+      //     false
+      //   );
+
+      //   parentChilddiv12.addEventListener(
+      //     "click",
+      //     (event) => {
+      //       event.stopPropagation();
+      //       event.stopImmediatePropagation;
+
+      //       console.log("parentChilddiv12 Test 1234");
+      //     },
+      //     false
+      //   );
+
+      //   btn1.addEventListener(
+      //     "click",
+      //     (event) => {
+      //       event.stopPropagation();
+      //       console.log("btn1");
+      //     },
+      //     false
+      //   );
+
+      //   In the above example, when we click on the button, the event is bubbled up to the parent elements.
+      //   The event is handled by the parentChilddiv12 and then by the parentdiv1.
+      // To avoid the event bubbling, we can use the stopPropagation() method.
+      //   The stopPropagation() method prevents the event from bubbling up the event chain.
+      //   The stopPropagation() method does not prevent other event handlers from being executed on the current element.
+
+      //    Example of stopImmediatePropagation:
+      //    The stopImmediatePropagation() method prevents other listeners of the same event from being called.
+
+      // Example:
+      //   const parentdiv1 = document.getElementById("parentdiv1");
+      //   const parentChilddiv12 = document.getElementById("parentChilddiv12");
+      //   const btn1 = document.getElementById("btn1");
+
+      //   parentdiv1.addEventListener(
+      //     "click",
+      //     (e) => {
+      //       console.log("parentdiv1");
+      //     },
+      //     false
+      //   );
+
+      //   parentChilddiv12.addEventListener(
+      //     "click",
+      //     (event) => {
+      //       //   event.stopImmediatePropagation;
+      //       console.log("parentChilddiv12");
+      //       event.stopImmediatePropagation();
+      //     },
+      //     false
+      //   );
+
+      //   parentChilddiv12.addEventListener(
+      //     "click",
+      //     (event) => {
+      //       console.log("parentChilddiv12 Test 1234");
+      //     },
+      //     false
+      //   );
+
+      //   btn1.addEventListener(
+      //     "click",
+      //     (event) => {
+      //       event.stopPropagation();
+      //       console.log("btn1");
+      //     },
+      //     false
+      //   );
+
+      //   In the above example, when we click on the button, the event is bubbled up to the parent elements.
+
+      //   The event is handled by the parentChilddiv12 and then by the parentdiv1.
+      //   To avoid the event bubbling, we can use the stopPropagation() method.
+      //   The stopPropagation() method prevents the event from bubbling up the event chain.
+      //   The stopPropagation() method does not prevent other event handlers from being executed on the current element.
+      //  stopImmediatePropagation() method prevents other listeners of the same event from being called.
+
+      //   Event Capturing:
+      //   Event capturing is the opposite of event bubbling.
+
+      //   The event is first captured by the outermost element and propagated to the inner elements.
+
+      //   Example:
+      const parentdiv1 = document.getElementById("parentdiv1");
+      const parentChilddiv12 = document.getElementById("parentChilddiv12");
+      const btn1 = document.getElementById("btn1");
+
+      parentdiv1.addEventListener(
+        "click",
+        (e) => {
+          console.log("parentdiv1");
+        },
+        true
+      );
+
+      parentChilddiv12.addEventListener(
+        "click",
+        (event) => {
+          console.log("parentChilddiv12");
+        },
+        true
+      );
+
+      parentChilddiv12.addEventListener(
+        "click",
+        (event) => {
+          console.log("parentChilddiv12 Test 1234");
+        },
+        true
+      );
+
+      btn1.addEventListener(
+        "click",
+        (event) => {
+          console.log("btn1");
+        },
+        true
+      );
+    </script>
+
+    <!-- preventDefault -->
+    <!-- The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur. -->
+    <!-- For example, this can be useful when: -->
+    <!-- Clicking on a "Submit" button, prevent it from submitting a form -->
+    <!-- Clicking on a link, prevent the link from following the URL -->
+
+    <form>
+      <input type="text" id="input1" />
+      <button id="btn2">Submit</button>
+    </form>
+
+    <a
+      href="https://www.google.com"
+      id="link1"
+      onclick="(event) => callFunction(event)"
+      >Google</a
+    >
+    <script>
+      const input1 = document.getElementById("input1");
+      const btn2 = document.getElementById("btn2");
+
+      btn2.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        console.log("btn2");
+      });
+
+      const link1 = document.getElementById("link1");
+      link1.addEventListener("click", (event) => {
+        event.preventDefault();
+        console.log("link1", event);
+        console.log("link1");
+      });
+
+      callFunction = (event) => {
+        event.preventDefault();
+        console.log("callFunction");
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>JavaScript Callback Functions</h2>
+
+    <p>
+      Callback functions are used to execute code after another code has
+      finished executing.
+    </p>
+    <p>Sum of two numbers is : 5 + 5</p>
+    <p id="demo"></p>
+    <script>
+      // Callback functions in javascript
+      //  A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+
+      //  Example of callback function
+
+      //   function myDisplayer(some) {
+      //     document.getElementById("demo").innerHTML = some;
+      //   }
+
+      //   function myCalculator(num1, num2, myCallback) {
+      //     let sum = num1 + num2;
+      //     setTimeout(() => {
+      //       myCallback(sum);
+      //       console.log("Sum of two numbers is : " + sum);
+      //     }, 3000);
+      //   }
+
+      //   myCalculator(5, 5, myDisplayer);
+
+      //   performMemoryClearOperation();
+
+      //   function performMemoryClearOperation() {
+      //     console.log("Memory cleared");
+      //   }
+
+      //   performMemoryClearOperation1();
+
+      //   function performMemoryClearOperation1() {
+      //     setTimeout(() => {
+      //       console.log("Memory cleared after timeout");
+      //     }, 1000);
+      //   }
+
+      //  Asynchronous Javascript
+
+      //    Sending request to server ->->->->->->-> Request ->->->->->->-> > Server  (10mins)
+      //    Sending request to server <-<-<-<-<-<-<-<--Wait <-<-<-<-<-<-<-<- Server
+
+      // High order functions in javascript
+
+      //  A function that takes another function as an argument or returns another function as a result is called a higher order function.
+
+      //   Example of callback function map function
+
+      //   const array1 = [1, 4, 9, 16];
+      //   const multiply = (x) => x * 2;
+      //   const multipyValues = array1.map(multiply);
+      //   console.log(multipyValues);
+
+      //    Callback hell in javascript
+
+      //    Callback hell is a phenomenon that afflicts a JavaScript developer when he tries to execute multiple asynchronous operations one after the other.
+
+      //    Example of callback hell
+
+      //   function callbackHell1(callback) {
+      //     setTimeout(() => {
+      //       console.log("First callback");
+      //     }, 1000);
+      //   }
+
+      //   function callbackHell2(callback) {
+      //     setTimeout(() => {
+      //       console.log("Second callback");
+      //     }, 1000);
+      //   }
+
+      //   function callbackHell3(callback) {
+      //     setTimeout(() => {
+      //       console.log("Third callback");
+      //     }, 1000);
+      //   }
+
+      //   function callbackHell4(callback) {
+      //     setTimeout(() => {
+      //       console.log("Fourth callback");
+      //     }, 1000);
+      //   }
+
+      //   function callbackHell5(callback) {
+      //     setTimeout(() => {
+      //       console.log("Fifth callback");
+      //     }, 1000);
+      //   }
+
+      //   callbackHell1(function () {
+      //     // kgjklgjd
+      //     callbackHell2(function () {
+      //       // \sgjdsklfjsl
+      //       callbackHell3(function () {
+      //         // dfgjdfklgdj
+      //         callbackHell4(function () {
+      //           // dfkgjdgkljdfgkl
+      //           callbackHell5(function () {
+      //             console.log("All callbacks are executed");
+      //           });
+      //         });
+      //       });
+      //     });
+      //   });
+
+      //  Promises in javascript
+
+      //  A promise is an object that may produce a single value some time in the future: either a resolved value, or a reason that it's not resolved (e.g., a network error occurred). A promise may be in one of 3 possible states: fulfilled, rejected, or pending.
+
+      //  Example of promise
+
+      //   const promise = new Promise((resolve, reject) => {
+      //     const sum = 5 + 5;
+
+      //     if (sum == 10) {
+      //       resolve("calculation is correct");
+      //     } else {
+      //       reject("Calculation is incorrect");
+      //     }
+      //   });
+
+      //   promise
+      //     .then((result) => {
+      //       console.log("sucess", result);
+      //     })
+      //     .catch((error) => {
+      //       console.log("error", error);
+      //     });
+
+      //  promises with dummy api call
+
+      const promise1 = new Promise((resolve, reject) => {
+        fetch("https://jsonplaceholder.typicode.com/todos/1")
+          .then((response) => {
+            console.log(response);
+            const json = response.json();
+
+            if (response.status == 200) {
+              console.log("Response is correct");
+              resolve(json);
+            } else {
+              console.log("Response is incorrect");
+              reject("Response is incorrect");
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            reject(error);
+          });
+      });
+
+      promise1.then((response) => {
+        console.log("Thanks for resolving", response);
+      });
+
+      //  execution goes on here onwards without waiting for the promise to resolve or reject
+
+      //  state of promise
+      // pending - promise is not resolved or rejected
+      // fulfilled - promise is resolved
+      // rejected - promise is rejected
+      //  Settled - promise is either resolved or rejected
+
+      //  Resolve callback hell using promises
+
+      //   function callbackHell1(callback) {
+      //     setTimeout(() => {
+      //       console.log("First callback");
+      //     }, 1000);
+      //   }
+
+      //   function callbackHell2(callback) {
+      //     setTimeout(() => {
+      //       console.log("Second callback");
+      //     }, 1000);
+      //   }
+
+      //   function callbackHell3(callback) {
+      //     setTimeout(() => {
+      //       console.log("Third callback");
+      //     }, 1000);
+      //   }
+
+      //   function callbackHell4(callback) {
+      //     setTimeout(() => {
+      //       console.log("Fourth callback");
+      //     }, 1000);
+      //   }
+
+      //   function callbackHell5(callback) {
+      //     setTimeout(() => {
+      //       console.log("Fifth callback");
+      //     }, 1000);
+      //   }
+
+      //   callbackHell1("First callback")
+      //     .then((result) => {
+      //       console.log(result);
+      //       return callbackHell2("Second callback");
+      //     })
+      //     .then((result) => {
+      //       console.log(result);
+
+      //       return callbackHell3("Third callback");
+      //     })
+      //     .then((result) => {
+      //       console.log(result);
+      //       return callbackHell4("Fourth callback");
+      //     })
+      //     .then((result) => {
+      //       console.log(result);
+      //       return callbackHell5("Fifth callback");
+      //     })
+      //     .then((result) => {
+      //       console.log(result);
+      //       console.log("All callbacks are executed");
+      //     })
+      //     .catch((error) => {
+      //       console.log(error);
+      //     });
+
+      // Multiple promises in javascript
+
+      const promise2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          reject("First promise");
+        }, 1000);
+      });
+
+      const promise3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          reject("Second promise");
+        }, 1000);
+      });
+
+      const promise4 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("Third promise");
+        }, 1000);
+      });
+
+      //   Promise.all used when all promises are resolved
+      Promise.all([promise2, promise3, promise4]).then((result) => {
+        console.log("This is out of All", result);
+      });
+
+      //   Promise.allSettled used when all promises are either resolved or rejected (settled)
+      Promise.allSettled([promise2, promise3, promise4]).then((result) => {
+        console.log("This is out of All Settled", result);
+      });
+
+      //   Promise.any used when any one promise is resolved
+      Promise.any([promise2, promise3, promise4]).then((result) => {
+        console.log("This is out of Any", result);
+      });
+
+      // Promise.race used when any one promise is resolved or rejected
+      Promise.race([promise2, promise3, promise4]).then((result) => {
+        console.log("This is out of race", result);
+      });
+    </script>
+  </body>
+</html>

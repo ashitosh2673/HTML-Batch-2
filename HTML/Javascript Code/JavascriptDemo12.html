@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script>
+      //  Window alert in Javascript
+      // The alert() method displays an alert box with a specified message and an OK button.
+
+      function myAlertFunction() {
+        alert("Hello World!");
+      }
+
+      //   myAlertFunction();
+
+      //  Window confirm in Javascript
+      // The confirm() method displays a dialog box with a specified message, along with an OK and a Cancel button.
+
+      function myConfirmFunction() {
+        var txt;
+        var result = confirm(
+          "Are you sure you want to refresh the page, refreshing the pages will lost the al the details, and it might deduct amount fro your account!"
+        );
+        if (result == true) {
+          // refresh code here
+          txt = "Your pressed refresh option!";
+        } else {
+          //  do nothing
+          txt = "Thanks your in safe zone!";
+        }
+        document.getElementById("demo").innerHTML = txt;
+      }
+
+      // myConfirmFunction();
+
+      //  Window prompt in Javascript
+      // The prompt() method displays a dialog box that prompts the visitor for input. A prompt box is often used if you want the user to input a value before entering a page.
+
+      function myPromptFunction() {
+        var txt;
+        var person = prompt("Please enter your name:");
+        console.log("person object ===>", person);
+        if (person == null || person == "") {
+          //  cancel code here
+          txt = "User cancelled the prompt.";
+        } else {
+          // Perform operation on input vaues
+          txt = "Hello " + person + "! How are you today?";
+        }
+        document.getElementById("demo").innerHTML = txt;
+      }
+
+      // myPromptFunction();
+
+      //   Javascript error handling
+      // The try statement lets you test a block of code for errors.
+
+      // Example of try catch :
+      // The catch statement lets you handle the error.
+      function checkTryCatch() {
+        try {
+          console.log("inside try block!");
+          const person = prompt("Please enter your name:");
+          console.log("person object ===>", person);
+          if (person == null || person == "") {
+            throw new Error(
+              "User cancelled the prompt. Please enter your name!"
+            );
+          } else {
+            txt = "Hello " + person + "! How are you today?";
+          }
+        } catch (error) {
+          console.log("inside catch block!", error);
+          document.getElementById("demo").innerHTML = error.message;
+        }
+      }
+
+      checkTryCatch();
+
+      // The finally statement lets you execute code, after try and catch, regardless of the result.
+
+      //  Example of try catch finally
+
+      function checkTryCatchFinally() {
+        try {
+          console.log("inside try block!");
+          const person = prompt("Please enter your name:");
+          console.log("person object ===>", person);
+          if (person == null || person == "") {
+            // txt = "Hey Anonymous person! Please enter your name?";
+
+            throw new Error(
+              "User cancelled the prompt. Please enter your name!"
+            );
+          } else {
+            txt = "Hello " + person + "! How are you today?";
+          }
+        } catch (error) {
+          console.log("inside catch block!", error);
+          text = error.message;
+          //   document.getElementById("demo").innerHTML = error.message;
+        } finally {
+          console.log("inside finally block!");
+          document.getElementById("demo").innerHTML = text;
+        }
+      }
+
+      //   checkTryCatchFinally();
+    </script>
+
+    <script type="module">
+      import { message } from "./module.js";
+
+      console.log("message ===>", message);
+      //    javascript Modules
+
+      //  Modules are a way to split an application into separate files instead of having all of your application in one file. Modules are imported and exported using the import and export keywords.
+
+      //   promptBox();
+    </script>
+  </body>
+</html>

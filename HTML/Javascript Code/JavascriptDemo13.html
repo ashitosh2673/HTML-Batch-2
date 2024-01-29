@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  cookie in Javascript
+
+      //  A cookie is a small text file that lets you store a small amount of data (nearly 4KB) on the user's computer. The cookie is saved in the browser directory as a text file. Its main purpose is to store the information about the user on their computer. When a user requests a web page to the server, the cookie is sent back to the server. The server can use the cookie to read the user's information.
+
+      //   set cookie / create cookie
+      document.cookie = "username=John Doe";
+      document.cookie =
+        "username=John Doe; expires=Thu, 18 Dec 2024 12:00:00 UTC";
+
+      document.cookie = "salary=100k; expires=Thu, 18 Dec 2024 12:00:00 UTC";
+
+      //   get cookie
+      var x = document.cookie;
+      //   console.log("x ===>", x);
+
+      //   set method for cookie
+      function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000); // 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"; // path=/ means cookie is available in entire website
+      }
+
+      //   get method for cookie
+
+      function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie); // decodeURIComponent() function decodes a URI component.
+        var ca = decodedCookie.split(";"); // The split() method is used to split a string into an array of substrings, and returns the new array.
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+
+      //   check method for cookie
+
+      //   function checkCookie() {
+      //     var user = getCookie("username");
+      //     if (user != "") {
+      //       alert("Welcome again " + user);
+      //     } else {
+      //       user = prompt("Please enter your name:", "");
+      //       if (user != "" && user != null) {
+      //         setCookie("username", user, 30);
+      //       }
+      //     }
+      //   }
+
+      //   //   delete method for cookie
+
+      //   function deleteCookie(cname) {
+      //     document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      //   }
+
+      setCookie("username", "John Doe", 30);
+      console.log(getCookie("username"));
+      //   checkCookie();
+      //   deleteCookie("username");
+
+      //   delete cookie
+
+      //   local storage in Javascript
+
+      //   The localStorage and sessionStorage properties allow to save key/value pairs in a web browser.
+      //  The localStorage object stores data with no expiration date. The data will not be deleted when the browser is closed, and will be available the next day, week, or year.
+
+      //  The localStorage property is read-only.
+
+      // Set Local Storage Item
+
+      localStorage.setItem("name", "John");
+      localStorage.setItem("age", "30");
+
+      //   get local storage item
+
+      let name = localStorage.getItem("name");
+      let age = localStorage.getItem("age");
+
+      console.log(name, age);
+
+      //   remove local storage item
+
+      localStorage.removeItem("name");
+      let name1 = localStorage.getItem("name");
+      let age1 = localStorage.getItem("age");
+
+      console.log(name1, age1);
+
+      //   clear local storage
+
+      localStorage.clear();
+
+      // session storage in Javascript
+
+      // The sessionStorage object stores data for only one session (the data is deleted when the browser tab is closed).
+
+      // Set Session Storage Item
+
+      sessionStorage.setItem("name", "Beth");
+      sessionStorage.setItem("age", "30");
+
+      //   get session storage item
+
+      let name2 = sessionStorage.getItem("name");
+      let age2 = sessionStorage.getItem("age");
+
+      console.log(name2, age2);
+
+      //   //   remove session storage item
+
+      sessionStorage.removeItem("name");
+      let name3 = sessionStorage.getItem("name");
+      let age3 = sessionStorage.getItem("age");
+
+      console.log(name3, age3);
+
+      //   //   clear session storage
+
+      sessionStorage.clear();
+    </script>
+  </body>
+</html>
